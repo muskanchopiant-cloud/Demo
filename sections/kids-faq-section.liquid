@@ -1,0 +1,318 @@
+<style>
+  .faq-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background: #E7F9FF;
+    position: relative;
+  }
+  .faq-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 347px 0 auto;
+  }
+  .faq-section .faq-details h2 {
+    font-family: "Coolvetica", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0;
+    color: #253C7A;
+    padding-bottom: 57px;
+    padding-right: 20%;
+  }
+  .faq-section .accordion .accordion-item {
+    padding-bottom: 40px;
+  }
+  .faq-section .accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    color: #7288a2;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .faq-section .accordion button:hover,
+  .faq-section .accordion button:focus {
+    cursor: pointer;
+    color: #03b5d2;
+  }
+  .faq-section .accordion button:hover::after,
+  .faq-section .accordion button:focus::after {
+    cursor: pointer;
+    color: #03b5d2;
+    border: 1px solid #03b5d2;
+  }
+  .faq-section .accordion-title {
+    border-bottom: 2px solid #E0E0E0;
+  }
+  .faq-section .accordion-title p {
+    font-family: "Lexend", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -0.011em;
+    text-align: left;
+    margin: 0;
+    color: #253C7A;
+    padding-bottom: 25px;
+  }
+  .faq-section .accordion button .icon {
+    position: absolute;
+    top: 9px;
+    right: 27px;
+  }
+  .faq-section .accordion button .icon::before {
+    content: '';
+    background-image: url('https://cdn.shopify.com/s/files/1/0585/7610/9670/files/Vector_979.svg?v=1729245821'); 
+    display: block;
+    width: 27px;
+    height: 15px;
+  }
+  .faq-section .accordion button[aria-expanded='true'] .icon::before {
+    background-image: url('https://cdn.shopify.com/s/files/1/0585/7610/9670/files/Vector_977.svg?v=1729245821'); 
+  }
+  .faq-section .accordion button[aria-expanded='true'] {
+    color: #03b5d2;
+  }
+  .faq-section .accordion button[aria-expanded='true'] .icon::after {
+    width: 0;
+  }
+  .faq-section .accordion button[aria-expanded='true'] + .accordion-content {
+    opacity: 1;
+    max-height: 9em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .faq-section .accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .faq-section .accordion .accordion-content p {
+    font-family: "Lexend", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: -0.011em;
+    text-align: left;
+    margin: 0;
+    color: #2D2D2D;
+    padding-top: 20px;
+  }
+  .faq-section .shop-button {
+    padding-right: 23%;
+  }
+  .faq-section .shop-button a {
+    font-family: Lexend;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin: 0 auto;
+    display: block;
+    text-decoration: none;
+    max-width: 257px;
+    padding: 22px 0;
+    background: #29ABE2;
+    border-radius: 74px;
+    border: 2px solid #000;
+    box-shadow: 5px 5px 0 0px black;
+    margin-top: 29px;
+  }
+  @media screen and (max-width: 1024px){
+    .faq-section .accordion-title p{
+      font-size: 23px;
+      line-height: 23px;
+    }
+    .faq-section .accordion button .icon{
+      top: 5px;
+      right: 20px;
+    }
+  }
+  @media screen and (max-width: 767px){
+   .faq-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_top_padding }}px;
+      padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+    }
+    .faq-section .faq-details h2{
+      font-size: 40px;
+      line-height: 60px;
+      padding-bottom: 33px;
+      padding-right: 0;
+    }
+    .faq-section .accordion-title p{
+      max-width: 249px;
+      width: 100%;
+      padding-bottom: 17px;
+    }
+    .faq-section .accordion .accordion-content p{
+      font-size: 16px;
+    }
+    .faq-section .shop-button {
+      padding-right: 0;
+    }
+    .faq-section .shop-button a{
+      max-width: 209px;
+      padding: 14px 0;
+      box-shadow: 3px 3px 0 0px black;
+      margin-top: 4px;
+    }
+  }
+</style>
+<section class="faq-section {{ section.settings.custom_class }} faq-{{ section.id }}">
+  <div class="page-width">
+    <div class="faq-details">
+        <h2>{{ section.settings.headding }}</h2>
+      <div class="faq-information">
+        <div class="accordion">
+          {% for block in section.blocks %}
+            <div class="accordion-item">
+              <button id="accordion-button-5" aria-expanded="false">
+                <div class="accordion-title">{{ block.settings.question }}</div>
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      <div class="shop-button">
+        {% if section.settings.shop_button_text != blank %}
+          <a href="{{ section.settings.shop_button_link }}">{{ section.settings.shop_button_text }}</a>
+        {% endif %}
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  const items = document.querySelectorAll('.accordion button');
+
+  function toggleAccordion() {
+    const itemToggle = this.getAttribute('aria-expanded');
+  
+    for (i = 0; i < items.length; i++) {
+      items[i].setAttribute('aria-expanded', 'false');
+    }
+  
+    if (itemToggle == 'false') {
+      this.setAttribute('aria-expanded', 'true');
+    }
+  }
+  
+  items.forEach((item) => item.addEventListener('click', toggleAccordion));
+</script>
+{% schema %}
+  {
+    "name": "Faq section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headding",
+        "label": "Headding"
+      },
+      {
+        "type": "image_picker",
+        "id": "faq_image",
+        "label": "Faq image"
+      },
+      {
+        "type": "url",
+        "id": "shop_button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "text",
+        "id": "shop_button_text",
+        "label": "Shop button text"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+    ],
+    "blocks":[
+      {
+        "name":"Accordion",
+        "type":"text",
+        "settings":[
+          {
+            "type": "richtext",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "Kids faq"
+      }
+    ]
+  }
+{% endschema %}

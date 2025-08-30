@@ -1,0 +1,276 @@
+<style>
+  .image-with-text-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background: #E57788;
+  }
+  .image-with-text-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .image-with-text-section .image-with-text.details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .image-with-text-section .text-content {
+    width: 54.8%;
+  }
+  .image-with-text-section .text-content {
+    width: 54.8%;
+  }
+  .image-with-text-section .image-info img {
+    display: block;
+  }
+  .image-with-text-section .text-information h2 {
+    font-family: Aleo;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.022em;
+    text-align: left;
+    color: #FFFFFF;
+    margin: 0;
+    max-width: 374px;
+    width: 100%;
+  }
+  .image-with-text-section .text-info p{
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #fff;
+    margin: 0;
+    padding-top: 16px;
+    padding-bottom: 40px;
+    letter-spacing: 0;
+    max-width: 582px;
+  }
+  .image-with-text-section .text-info p:first-child {
+    padding-bottom: 0;
+  }
+  .image-with-text-section .text-info p:last-child {
+    padding-top: 24px;
+  }
+  .image-with-text-section .info-cards {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+  }
+  .image-with-text-section .icon-information {
+    max-width: 145px;
+    width: 100%;
+  }
+  .image-with-text-section .icon-info img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .image-with-text-section .icon-information h3 {
+    font-family: Aleo;
+    font-size: 20.04px;
+    font-weight: 700;
+    line-height: 25.04px;
+    letter-spacing: -0.022em;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding-top: 15px;
+  }
+  .image-with-text-section .icon-text {
+    font-family: Helvetica;
+    font-size: 12.52px;
+    font-weight: 400;
+    line-height: 20.04px;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 0;
+  }
+  @media screen and (max-width: 1024px){
+    .image-with-text-section .image-with-text.details{
+      gap: 20px;
+    }
+    .image-with-text-section .image-info img {
+      max-width: 100%;
+    }
+    .image-with-text-section .text-information h2{
+      font-size: 30px;
+      line-height: 35px;
+    }
+    .image-with-text-section .text-info p{
+      font-size: 16px;
+      line-height: 24px;
+      padding-top: 10px;
+      padding-bottom: 25px;
+    }
+    .image-with-text-section .text-info p:last-child {
+      padding-top: 15px;
+    }
+  }
+  @media screen and (max-width: 767px){
+     .featured-in-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_top_padding }}px;
+      padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+    }
+    .image-with-text-section .image-with-text.details {
+      display: block;
+    }
+    .image-with-text-section .text-content {
+      width: 100%;
+    }
+    .image-with-text-section .image-info img {
+      max-width: 100%;
+    }
+    .image-with-text-section .text-information h2{
+      font-size: 40px;
+      line-height: 40px;
+      padding-top: 25px;
+    }
+    .image-with-text-section .info-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+<section class="image-with-text-section {{ section.settings.custom_class }} image-with-text-{{ section.id }}">
+  <div class="page-width">
+    <div class="image-with-text details">
+      <div class="image-content">
+        <div class="image-info">
+          {% if section.settings.image_info != blank %}
+            <img src="{{ section.settings.image_info | image_url }}" width="auto" height="auto">
+          {% endif %}
+        </div>
+      </div>
+      <div class="text-content">
+        <div class="text-information">
+          <h2>{{ section.settings.headding }}</h2>
+          <div class="text-info">{{ section.settings.text }}</div>
+          <div class="info-cards">
+            {% for block in section.blocks %}
+              <div class="icon-information">
+                <div class="icon-info">
+                  {% if block.settings.icon != blank %}
+                    <img src="{{ block.settings.icon | image_url }}" width="auto" height="auto">
+                  {% endif %}
+                </div>
+                <h3>
+                  {{ block.settings.icon_title }}
+                </h3>
+                <div class="icon-text">
+                  {{ block.settings.icon-text }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Image with text section",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_info",
+          "label": "Image info"
+        },
+      {
+        "type": "text",
+        "id": "headding",
+        "label": "Headding"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+    ],
+    "blocks":[
+      {
+        "name":"information",
+        "type":"text",
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "icon"
+          },
+          {
+            "type": "text",
+            "id": "icon_title",
+            "label": "Icon title"
+          },
+          {
+            "type": "text",
+            "id": "icon-text",
+            "label": "icon-text"
+          }
+        ]
+      }
+    ],
+    "presets":[
+    {
+      "name": "Image with text section"
+    }
+  ]
+  }
+{% endschema %}

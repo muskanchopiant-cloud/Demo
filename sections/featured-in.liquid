@@ -1,0 +1,154 @@
+<style>
+  .featured-in-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background: #E57788;
+  }
+  .featured-in-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .featured-in-section .featured-in-details h2 {
+      font-family: Helvetica;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+      text-align: center;
+      color: #fff;
+      margin: 0;
+      padding-bottom: 40px;
+      letter-spacing: 0;
+    }
+    .featured-in-section .featured-desktop-image{
+      display: block;
+    }
+    .featured-in-section .featured-mobile-image{
+      display: none;
+    }
+    .featured-in-section .featured-desktop-image img {
+      max-width: 100%;
+      width: 100%;
+    }
+  @media screen and (max-width: 1024px){
+    .featured-in-section .featured-in-details h2{
+      font-size: 22px;
+    }
+  }
+   @media screen and (max-width: 767px){
+     .featured-in-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_top_padding }}px;
+      padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+    }
+    .featured-in-section .featured-in-details h2{
+      font-size: 19px;
+      line-height: 23px;
+      padding-bottom: 20px;
+    }
+    .featured-in-section .featured-desktop-image{
+      display: none;
+    }
+    .featured-in-section .featured-mobile-image{
+      display: block;
+    }
+    .featured-in-section .featured-mobile-image img {
+      max-width: 100%;
+      width: 100%;
+    }
+   }
+</style>
+<section class="featured-in-section {{ section.settings.custom_class }} featured-in-{{ section.id }}">
+  <div class="page-width">
+    <div class="featured-in-details">
+      <h2>{{ section.settings.headding }}</h2>
+      <div class="featured-desktop-image">
+         {% if section.settings.featured_image != blank %}
+            <img src="{{ section.settings.featured_image | image_url }}" width="auto" height="auto">
+          {% endif %}
+      </div>
+      <div class="featured-mobile-image">
+         {% if section.settings.featured_mobile_image != blank %}
+            <img src="{{ section.settings.featured_mobile_image | image_url }}" width="auto" height="auto">
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Featured In",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headding",
+        "label": "Headding"
+      },
+      {
+        "type": "image_picker",
+        "id": "featured_image",
+        "label": "Featured image"
+      },
+      {
+        "type": "image_picker",
+        "id": "featured_mobile_image",
+        "label": "Featured mobile image"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+    ],
+    "presets":[
+    {
+      "name": "Featured in section"
+    }
+  ]
+  }
+{% endschema %}

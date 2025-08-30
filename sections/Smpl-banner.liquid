@@ -1,0 +1,372 @@
+<style>
+  .hero-banner-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background-image: url('{{ section.settings.background_image | image_url }}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .hero-banner-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .hero-banner .banner-heading {
+    font-family: Inter;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 40px;
+  }
+  .hero-banner .banner-heading b {
+    margin: 0 -27px 0 -61px;
+    letter-spacing: 1px;
+  }
+  .hero-banner .description p {
+    font-family: Archivo;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    max-width: 75%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .hero-banner .star-image {
+    padding-top: 40px;
+    padding-bottom: 56px;
+  }
+  .hero-banner .star-image img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .buy-button {
+    position: relative;
+    overflow: hidden;
+    max-width: 317px;
+    max-height: 64px;
+    margin: 0 auto;
+    border-radius: 50px;
+    color: {{ section.settings.button_text_color }};
+    text-align: center;
+    z-index: 1;
+  }
+  .buy-button:before {
+    content: "";
+    position: absolute;
+    width: 4.54px;
+    height: 130px;
+    transform: rotate(-19.043deg);
+    flex-shrink: 0;
+    top: -40px;
+    left: -40px;
+    z-index: 2;
+    display: block;
+    background: #FFF;
+    animation: right-move 1.9s infinite ease;
+  }
+  .buy-button:after {
+    content: "";
+    position: absolute;
+    width: 17.985px;
+    height: 130px;
+    transform: rotate(-19.043deg);
+    flex-shrink: 0;
+    top: -40px;
+    left: -40px;
+    background: #FFF;
+    z-index: 1;
+    animation: right-move 1.9s infinite ease;
+    animation-delay: 0.1s;
+  }
+  @keyframes right-move{
+    0% {
+      left: -30px;
+    }
+    100% {
+        left: 150%;
+    }
+  }
+  .buy-button a {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 26px 10px;
+    border-radius: 50px;
+    background: {{ section.settings.button_bg_color }};
+    display: inline-block;
+    width: 100%;
+    max-height:64px;
+    height:100%;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .buy-button a:hover:before {
+    visibility: visible;
+    transform: scale(3.4) translate(-15%, 0);
+    transition: transform 0.5s ease;
+  }
+  .buy-button a:before {
+    content: "";
+    background: {{ section.settings.button_hover_color }};
+    position: absolute;
+    width: 96px;
+    bottom: -50%;
+    transform: translate(-50%, 20%) scale(0.1);
+    left: 50%;
+    height: 96px;
+    border-radius: 100%;
+    visibility: hidden;
+    z-index: -2;
+    transition: transform 0.5s ease, visibility 0.4s ease;
+  }
+  .buy-button a:hover:after {
+    visibility: visible;
+    transform: scale(3.4) translate(-15%, 0);
+    transition: transform 0.5s ease;
+  }
+  .buy-button a:after {
+    content: "";
+    background: {{ section.settings.button_hover_color }}26;
+    width: 148px;
+    bottom: -50%;
+    transform: translate(-50%, 50%) scale(1.8);
+    left: 50%;
+    height: 148px;
+    position: absolute;
+    border-radius: 100%;
+    visibility: hidden;
+    z-index: -2;
+    transition: transform 0.5s ease, visibility 0.4s ease;
+  }
+  @media screen and (max-width: 1024px){
+    .hero-banner-{{ section.id }} {
+      padding-top: {{ section.settings.tab_top_padding }}px;
+      padding-bottom: {{ section.settings.tab_bottom_padding }}px;
+     }
+    .hero-banner .banner-heading{
+      font-size: 60px;
+      padding: 0 110px 30px;
+    }
+    .hero-banner .banner-heading b {
+      margin: 0;
+    }
+    .hero-banner .description p{
+      font-size: 20px;
+    }
+    .hero-banner .star-image {
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
+    .buy-button {
+      max-width: 275px;
+    }
+    .buy-button a{
+      padding: 24px 10px;
+    }
+  }
+  @media screen and (max-width: 767px){
+     .hero-banner-{{ section.id }} {
+        padding-top: {{ section.settings.mob_top_padding }}px;
+        padding-bottom: {{ section.settings.mob_bottom_padding }}px;
+     }
+     .hero-banner .banner-heading {
+      font-size: 46px;
+      padding: 0 0 15px;
+     }
+     .hero-banner .description p {
+       font-size: 16px;
+       max-width: 100%;
+       line-height: 24px;
+       padding: 0 15px;
+     }
+     .hero-banner .star-image {
+        padding-top: 23px;
+        padding-bottom: 39px;
+    }
+     .buy-button {
+       max-width: 317px;
+       max-height: 64px;
+     }
+  }
+</style>
+<section class="hero-banner {{ section.settings.custom_class }} hero-banner-{{ section.id }}">
+  <div class="page-width">
+  <div class="banner-details">
+    <h2 class="banner-heading">{{ section.settings.section_heading }}</h2>
+    <div class="description">
+      {{ section.settings.description }}
+    </div>
+    <diV class="star-image">
+      {% if section.settings.star_image != blank %}
+        <img src="{{ section.settings.star_image | image_url }}" width="auto" height="auto" alt="{{ section.settings.star_image.alt }}">
+      {% endif %}
+    </diV>
+    <div class="buy-button">
+        {% if section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_url }}">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+  </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Hero banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "image_picker",
+        "id": "star_image",
+        "label": "Star image"
+      },
+      {
+        "type":"url",
+        "id":"button_url",
+        "label":"Button link"
+      },
+      {
+        "type":"text",
+        "id":"button_text",
+        "label":"Button text"
+      },
+      {
+          "type": "header",
+          "content": "Button settings"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button text color"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button background color"
+        },
+        {
+          "type": "color",
+          "id": "button_hover_color",
+          "label": "Hover color"
+        },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background image"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "header",
+        "content": "Desktop padding"
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "header",
+        "content": "Tablet padding"
+      },
+      {
+        "type": "range",
+        "id": "tab_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Tablet top padding"
+      },
+      {
+        "type": "range",
+        "id": "tab_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Tablet bottom padding"
+      },
+      {
+        "type": "header",
+        "content": "Mobile padding"
+      },
+      {
+        "type": "range",
+        "id": "mob_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mob_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Smpl hero banner"
+      }
+    ]
+  }
+{% endschema %}

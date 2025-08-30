@@ -1,0 +1,260 @@
+<style>
+  .video-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background-image: url('{{ section.settings.background_image | image_url }}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .video-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .video-details h2 {
+    font-family: Coolvetica;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0;
+    color: #fff;
+    padding-bottom: 21px;
+  }
+  .sub-headding p {
+    font-family: "Lexend", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: -0.011em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 auto;
+    max-width: 640px;
+    width: 100%;
+    padding-bottom: 34px;
+  }
+  video.video-info {
+    max-width: 884px;
+    width: 100%;
+    height: 493px;
+    margin: 0 auto;
+    display: block;
+  }
+  .desktop-top-icon,
+  .desktop-bottom-icon{
+    display: block;
+  }
+  .mobile-top-icon,
+  .mobile-bottom-icon{
+    display: none;
+  }
+  .desktop-top-icon {
+    position: absolute;
+    top: -34px;
+    left: 117px;
+  }
+  .desktop-bottom-icon {
+    position: absolute;
+    bottom: -78px;
+    right: 317px;
+    z-index: 1;
+  }
+  .desktop-top-icon img,
+  .desktop-bottom-icon img {
+    max-width: 100%;
+    display: block;
+  }
+  @media screen and (max-width: 1024px){
+    
+  }
+  @media screen and (max-width: 767px){
+    .video-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_top_padding }}px;
+      padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+      background-image: url('{{ section.settings.mobile_background_image | image_url }}');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .video-details h2{
+      font-size: 30px;
+      line-height: 35px;
+      padding-bottom: 17px;
+    }
+    .sub-headding p{
+      padding-bottom: 23px;
+    }
+    video.video-info {
+      max-width: 331px;
+      width: 100%;
+      height: 185px;
+      margin: 0 auto;
+      display: block;
+    }
+    .desktop-top-icon,
+    .desktop-bottom-icon{
+      display: none;
+    }
+    .mobile-top-icon,
+    .mobile-bottom-icon{
+      display: block;
+    }
+    .mobile-top-icon {
+      position: absolute;
+      top: -18px;
+      left: 127px;
+    }
+    .mobile-bottom-icon {
+      position: absolute;
+      bottom: 58px;
+      right: 82px;
+    }
+  }
+</style>
+<section class="video-section {{ section.settings.custom_class }} video-{{ section.id }}">
+  <div class="page-width">
+    <div class="video-details">
+      <h2>{{ section.settings.headding }}</h2>
+      <div class="sub-headding">
+        {{ section.settings.sub_headding }}
+      </div>
+      <div class="video-information">
+        <video class="video-info" src="{{ section.settings.video.sources[1].url }}"></video>
+      </div>
+      <div class="desktop-icon">
+        <div class="desktop-top-icon">
+          {% if section.settings.desktop_top_icon != blank %}
+            <img src="{{ section.settings.desktop_top_icon | image_url }}" alt="Tab Image" width="auto" height="auto">
+          {% endif %}
+        </div>
+        <div class="desktop-bottom-icon">
+          {% if section.settings.desktop_bottom_icon != blank %}
+            <img src="{{ section.settings.desktop_bottom_icon | image_url }}" alt="Tab Image" width="auto" height="auto">
+          {% endif %}
+        </div>
+      </div>
+      <div class="mobile-icon">
+        <div class="mobile-top-icon">
+          {% if section.settings.mobile_top_icon != blank %}
+            <img src="{{ section.settings.mobile_top_icon | image_url }}" alt="Tab Image" width="auto" height="auto">
+          {% endif %}
+        </div>
+        <div class="mobile-bottom-icon">
+          {% if section.settings.mobile_bottom_icon != blank %}
+            <img src="{{ section.settings.mobile_bottom_icon | image_url }}" alt="Tab Image" width="auto" height="auto">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Video",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headding",
+        "label": "Headding"
+      },
+      {
+        "type": "richtext",
+        "id": "sub_headding",
+        "label": "Sub headding"
+      },
+      {
+        "type": "video",
+        "id": "video",
+        "label": "video"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktop_top_icon",
+        "label": "Desktop top icon"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktop_bottom_icon",
+        "label": "Desktop bottom icon"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_top_icon",
+        "label": "Mobile top icon"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_bottom_icon",
+        "label": "Mobile bottom icon"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_background_image",
+        "label": "Background image"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+    ],
+    "presets":[
+      {
+        "name": "Video section"
+      }
+    ]
+  }
+{% endschema %}

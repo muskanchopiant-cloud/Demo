@@ -1,0 +1,264 @@
+<style>
+  .video-review-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+  }
+  .video-review-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .video-review-section .video-review-information {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .video-review-section .review-video {
+    padding-bottom: 56px;
+  }
+  .video-review-section .review-video img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
+  .video-review-section .review-image img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .video-review-section .review-content h3 {
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0;
+    color: #1F1F1F;
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+  .video-review-section .review-text p {
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0;
+    color: #1F1F1F;
+  }
+  .video-review-section .review-author p {
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0;
+    color: #B12159;
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+  .video-review-section .verified-buyer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .video-review-section .verified-buyer-image img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
+  .video-review-section .verified-buyer-text p {
+    font-family: Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0;
+    color: #1F1F1F;
+  }
+</style>
+<section class="video-review-section {{ section.settings.custom_class }} video-review-{{ section.id }}">
+  <div class="page-width">
+    <div class="video-review-details">
+      <div class="video-review-information">
+        {% for block in section.blocks %}
+          <div class="video-review-info">
+            <div class="review-video">
+              {% if block.settings.review_video != blank %}
+                <img src="{{ block.settings.review_video | image_url }}" width="auto" height="auto">
+              {% endif %}
+            </div>
+            <div class="review-content">
+              <div class="review-image">
+                {% if block.settings.review_image != blank %}
+                  <img src="{{ block.settings.review_image | image_url }}" width="auto" height="auto">
+                {% endif %}
+              </div>
+              <h3>{{ block.settings.review_title }}</h3>
+              <div class="review-text">
+                {{ block.settings.review_text }}
+              </div>
+              <div class="review-author">{{ block.settings.review_author }}</div>
+              <div class="verified-buyer">
+                <div class="verified-buyer-image">
+                  {% if block.settings.verified_buyer_image != blank %}
+                    <img src="{{ block.settings.verified_buyer_image | image_url }}" width="auto" height="auto">
+                  {% endif %}
+                </div>
+                <div class="verified-buyer-text">
+                  {{ block.settings.verified_buyer_text }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(window).resize(function(e){
+  if (window.matchMedia("(max-width: 767px)").matches){
+  $('.video-reviews-information').slick({
+  dots: false,
+  prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+  nextArrow: '<button class="slide-arrow next-arrow"></button>',
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  centerMode: true,
+  infinite: true,
+  centerPadding: '0px',
+  speed: 500,
+  variableWidth: true,
+});
+  }
+    });
+
+   $(window).resize(function(e){
+  if (window.matchMedia("(max-width: 767px)").matches){
+  $('.reviews-information').slick({
+  dots: true,
+  arrows: false,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1
+});
+  }
+    });
+</script>
+{% schema %}
+  {
+    "name": "Benefits section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+    ],
+    "blocks":[
+      {
+        "name":"Video review",
+        "type":"text",
+        "settings":[
+          {
+            "type":"image_picker",
+            "id":"review_video",
+            "label":"Review video"
+          },
+          {
+            "type":"image_picker",
+            "id":"review_image",
+            "label":"Review image"
+          },
+          {
+            "type": "text",
+            "id": "review_title",
+            "label": "Review title"
+          },
+          {
+            "type": "richtext",
+            "id": "review_text",
+            "label": "Review text"
+          },
+          {
+            "type": "richtext",
+            "id": "review_author",
+            "label": "Review author"
+          },
+          {
+            "type": "image_picker",
+            "id": "verified_buyer_image",
+            "label": "Verified buyer image"
+          },
+          {
+            "type": "richtext",
+            "id": "verified_buyer_text",
+            "label": "Verified buyer text"
+          }
+        ]
+      }
+    ],
+    "presets":[
+    {
+      "name": "Video review section"
+    }
+  ]
+  }
+{% endschema %}

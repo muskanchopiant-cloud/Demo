@@ -1,0 +1,303 @@
+<style>
+  .image-text-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background: #FFF9D8;
+  }
+  .image-text-{{ section.id }} .page-width {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 0 auto;
+  }
+  .image-text-details {
+    display: flex;
+    align-items: center;
+    gap: 63px;
+    justify-content: end;
+  }
+  .text-information {
+    width: 50%;
+    padding-left: 15px;
+  }
+  .image-information {
+    width: 50%;
+  }
+  .heading-text-info {
+    width: 62.5%;
+    margin: 0 0 0 auto;
+    padding-top: 40px;
+  }
+  .image-text-section .section-heading {
+    text-align: left;
+    letter-spacing: 0px;
+  }
+  .primary-text p{
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 25.76px;
+    letter-spacing: -0.1px;
+    text-align: left;
+    color: #000000;
+    margin: 0;
+  }
+  .image-text-section .primary-text{
+    padding: 37px 0 52px 0;
+    max-width: 543px;
+    width: 100%;
+  }
+  .image-text-section p.risk-text {
+    max-width: 317px;
+  }
+  .image-text-section .buy-button {
+    margin: 0;
+  }
+  .image-info {
+    margin-top: 4px;
+  }
+  .image-info img {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+  }
+  .image-text-section .bottom-text {
+    max-width: 317px;
+    width: 100%;
+  }
+  @media screen and (max-width: 1240px){
+    .image-text-section .heading-text-info {
+      width: 100%;
+      margin: 30px 0 30px 24px;
+    }
+    .image-text-section .primary-text {
+      padding: 30px 20px 30px 0;
+    }
+  }
+  @media screen and (max-width: 1024px){
+    .image-text-{{ section.id }} {
+        padding-top: {{ section.settings.tab_top_padding }}px;
+        padding-bottom: {{ section.settings.tab_bottom_padding }}px;
+     }
+    .image-text-details{
+      gap: 15px;
+    }
+    .text-information {
+      padding-left: 15px;
+    }
+    .section-heading{
+      font-size: 40px;
+    }
+    .primary-text{
+      font-size: 16px;
+      line-height: 22.76px;
+    }
+    .image-text-section .primary-text{
+      padding: 25px 0;
+    }
+  }
+  @media screen and (max-width: 767px){
+     .image-text-{{ section.id }} {
+        padding-top: {{ section.settings.mob_top_padding }}px;
+        padding-bottom: {{ section.settings.mob_bottom_padding }}px;
+     }
+    .section-heading {
+      font-size: 32px;
+      line-height: 38.73px;
+    }
+    .image-text-section .section-heading{
+      padding-right: 30px;
+    }
+    .primary-text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19.88px;
+    }
+    .image-text-section .primary-text{
+      padding: 24px 0 40px 0;
+    }
+    .image-text-details{
+      gap: 48px;
+      flex-direction: column;
+    }
+    .text-information,
+    .image-information{
+      width: auto;
+    }
+    .text-information {
+      padding: 0 24px;
+    }
+  }
+</style>
+<section class="image-text-section {{ section.settings.custom_class }} image-text-{{ section.id }}">
+  <div class="page-width">
+    <div class="image-text-details">
+      <div class="text-information">
+        <div class="heading-text-info">
+          <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
+          <div class="primary-text">
+            {{ section.settings.content }}
+          </div>
+          <div class="buy-button">
+            {% if section.settings.button_text != blank %}
+              <a href="{{ section.settings.button_url }}">
+                {{ section.settings.button_text }}
+              </a>
+            {% endif %}
+          </div>
+         <div class="bottom-text">{{ section.settings.bottom_text }}</div>
+        </div>
+      </div>
+      <div class="image-information">
+        <div class="image-info">
+          {% if section.settings.image != blank %}
+            <img src="{{ section.settings.image | image_url }}" alt="" width="auto" height="auto" >
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Image text section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button url"
+      },
+      {
+        "type": "text",
+        "id":"button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "header",
+        "content": "Button settings"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button text color"
+      },
+      {
+        "type": "color",
+        "id": "button_bg_color",
+        "label": "Button background color"
+      },
+      {
+        "type": "color",
+        "id": "button_hover_color",
+        "label": "Hover color"
+      },
+      {
+        "type": "text",
+        "id": "bottom_text",
+        "label": "Bottom text"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "header",
+        "content": "Desktop padding"
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "header",
+        "content": "Tablet padding"
+      },
+      {
+        "type": "range",
+        "id": "tab_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Tablet top padding"
+      },
+      {
+        "type": "range",
+        "id": "tab_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Tablet bottom padding"
+      },
+      {
+        "type": "header",
+        "content": "Mobile padding"
+      },
+      {
+        "type": "range",
+        "id": "mob_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mob_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+    ],
+    "presets":[
+      {
+        "name": "Sml image text"
+      }
+    ]
+  }
+{% endschema %}

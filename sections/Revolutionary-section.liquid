@@ -1,0 +1,550 @@
+{% style %}
+  .revolutionary-section.section-{{ section.id }} {
+    {% if section.settings.bg_image != blank %}
+      background-image:url({{ section.settings.bg_image | image_url }});
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    {% endif %}
+    padding-top:{{ section.settings.desktop_padding_top }}px;
+    padding-bottom:{{ section.settings.desktop_padding_bottom }}px;
+  }
+  .revolutionary-section .page-width{
+    max-width:{{ section.settings.container_size }}px;
+    margin:0 auto;
+    padding:0 15px;
+  }
+  .revolutionary-section h2.section-heading {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 0 0 37px;
+    letter-spacing: 0px;
+  }
+ .revolutionary-section h3.section-sub-heading {
+    color: #282828;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 142%;
+    letter-spacing: -0.2px;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .revolutionary-section .revolutionary-content {
+    padding-top: 118px;
+  }
+  .revolutionary-section .revolutionary-valve {
+    display: flex;
+    align-items: center;
+  }
+  .revolutionary-section .revolutionary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+  }
+  .revolutionary-section .revolutionary-text h3 {
+    color: #000;
+    font-family: Inter;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.01px;
+    padding: 0 0 16px;
+    margin: 0;
+  }
+   .revolutionary-section .revolutionary-valve {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .revolutionary-section .revolutionary-text {
+    width: calc(50% - 12.5px);
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 0 0 20px;
+  }
+  .revolutionary-section .revolutionary-image {
+    width: calc(50% - 12.5px);
+  }
+  .revolutionary-section .revolutionary-image img {
+    max-width: 406px;
+  }
+  .revolutionary-section .revolutionary-icon-image img {
+    width: 35px;
+    height: 35px;
+    max-width: unset;
+  }
+  .revolutionary-section .revolutionary-icon-image:before {
+    content: '';
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    background: #00A9FF26;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    animation: opacity_first 1.5s infinite ease-in-out;
+    animation-delay:0.9s;
+  }
+  .revolutionary-section .revolutionary-icon-image:after {
+    content: '';
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    background: #00A9FF26;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: opacity 1.5s infinite ease-in-out;
+  }
+  .revolutionary-section .revolutionary-icon-image {
+    position: relative;
+    z-index: 1;
+  }
+  @keyframes opacity_first{
+    0% {
+      width: 0;
+      height:0;
+    }
+    50% {
+      width: 70px;
+      height:70px;
+    }
+    75%{
+      width: 85px;
+      height:85px;
+    }
+    100%{
+      width: 90px;
+      height:90px;
+    }
+  }
+  @keyframes opacity{
+    0% {
+      width: 0;
+      height:0;
+    }
+    50%{
+      width: 70px;
+      height:70px;
+    }
+    75%{
+      width: 85px;
+      height:85px;
+    }
+    100%{
+      width: 90px;
+      height:90px;
+    }
+  }
+  .revolutionary-section .heading-text p {
+    color: #282828;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 142%;
+    letter-spacing: -0.2px;
+    max-width: 86%;
+    margin: 0;
+  }
+  .revolutionary-section .revolutionary-technology p {
+    color: #282828;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25.56px;
+    letter-spacing: -0.342px;
+    padding: 75px 16px 0 0px;
+    max-width: 75%;
+    margin: 0 auto;
+  }
+  .revolutionary-section .revolutionary-valve.loop-3 .revolutionary-image img {
+    margin: -24px 0 0 0;
+  }
+  .revolutionary-section .revolutionary-valve.loop-4 .revolutionary-text {
+    padding: 0 0 0 10px;
+    margin: -27px 0 0;
+  }
+  .revolutionary-section .revolutionary-valve.loop-2 .revolutionary-text {
+    padding: 20px 0 0 10px;
+  }
+  .revolutionary-section .buy-button.simple-button {
+    margin-top: 56px;
+  }
+  .revolutionary-section p.risk-text {
+    color: #282828;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25.56px;
+    letter-spacing: -0.304px;
+    padding-top: 14px;
+  }
+  @media screen and (max-width:1024px) {
+    .revolutionary-section.section-{{ section.id }} {
+      padding-top:{{ section.settings.tablet_padding_top }}px;
+      padding-bottom:{{ section.settings.tablet_padding_bottom }}px;
+    }
+    .revolutionary-section .revolutionary-image img {
+      max-width: 100%;
+    }
+  }
+  @media screen and (min-width:767px) {
+    .revolutionary-section .revolutionary-image img.mobile-image{
+      display:none;
+    }
+  }
+  @media screen and (max-width:767px) {
+    .revolutionary-section .revolutionary-image img.hide{
+      display:none;
+    }
+    .revolutionary-section.section-{{ section.id }} {
+      padding-top:{{ section.settings.mobile_padding_top }}px;
+      padding-bottom:{{ section.settings.mobile_padding_bottom }}px;
+    }
+    .revolutionary-section .page-width {
+      padding: 0 24px;
+    }
+    .revolutionary-section h2.section-heading {
+      max-width: 100%;
+      padding: 0 0 27px;
+    }
+    .revolutionary-section .revolutionary-content {
+      padding-top: 13px;
+      gap: 48px;
+    }
+    .revolutionary-section h3.section-sub-heading {
+      font-size: 18px;
+      font-style: normal;
+      line-height: 25.56px;
+      max-width: 100%;
+    }
+    .revolutionary-section .revolutionary-text h3 {
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: -0.528px;
+      padding: 0 0 17px;
+    }
+    .revolutionary-section .revolutionary-valve.loop-3 .revolutionary-image img {
+        margin: -30px 0 0 0;
+      }
+    .revolutionary-section .revolutionary-valve.loop-4 .revolutionary-text {
+      padding: 0 0 0 0;
+      margin: 0;
+    }
+    .revolutionary-section .revolutionary-valve.loop-2 .revolutionary-text {
+      padding: 0;
+    }
+    .revolutionary-section .revolutionary-valve {
+      flex-direction: column-reverse !important;
+      gap: 26px;
+    }
+    .revolutionary-section .revolutionary-image, 
+    .revolutionary-section .revolutionary-text {
+      width: 100%;
+      padding: 0;
+    }
+    .revolutionary-section .revolutionary-text{
+      gap: 16px;
+    }
+    .revolutionary-section .heading-text p {
+      font-size: 18px;
+      line-height: 25.56px;
+      max-width: 100%;
+    }
+    .revolutionary-section .revolutionary-image img {
+      max-width: 100%;
+    }
+    .revolutionary-section .revolutionary-icon-image img {
+      width: 35px;
+      height: 35px;
+      max-width: unset;
+    }
+    .revolutionary-section .revolutionary-icon-image:before {
+      animation: mobile_first_opacity 1.5s infinite ease-in-out;
+      animation-delay:0.9s;
+    }
+    .revolutionary-section .revolutionary-icon-image:after {
+      animation: mobile_opacity 1.5s infinite ease-in-out;
+    }    
+    .revolutionary-section .revolutionary-technology p
+      padding: 44px 0 0 0px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .revolutionary-section .buy-button.simple-button {
+      margin-top: 58px;
+    }
+    @keyframes mobile_first_opacity{
+      0% {
+        width: 0;
+        height:0;
+      }
+      50% {
+        width: 55px;
+        height:55px;
+      }
+      75%{
+        width: 65px;
+        height:65px;
+      }
+      100%{
+        width: 88px;
+        height:88px;
+      }
+    }
+    @keyframes mobile_opacity{
+      0% {
+        width: 0;
+        height:0;
+      }
+      50%{
+        width: 55px;
+        height:55px;
+      }
+      75%{
+        width: 65px;
+        height:65px;
+      }
+      100%{
+        width: 88px;
+        height:88px;
+      }
+    }
+  }
+{% endstyle %}
+<section class="revolutionary-section section-{{ section.id }} {{ section.settings.custom_class }}">
+  <div class="page-width">
+    <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
+    <h3 class="section-sub-heading">{{ section.settings.section_sub_heading }}</h3>
+    <div class="revolutionary-content">
+      {% for block in section.blocks %}
+        <div class="revolutionary-valve loop-{{ forloop.index }}" style="flex-direction:{{ block.settings.section_alignment }}">
+          <div class="revolutionary-text">
+            <div class="revolutionary-icon-image">
+              <img src="{{ section.settings.icon_image | image_url }}" width="auto" height="auto" alt="{{ section.settings.icon_image.alt }}">
+            </div>
+            <div class="heading-text">
+              <h3>{{ block.settings.revolutionary_heading }}</h3>
+              {{ block.settings.revolutionary_text }}
+            </div>
+          </div>
+          <div class="revolutionary-image">
+            {% if block.settings.image != blank %}
+              <img class="{% if block.settings.mo_image != blank  %}hide{% endif %}" src="{{ block.settings.image | image_url }}" width="auto" height="auto" alt="{{ block.settings.image.alt }}">
+            {% endif %}
+            {% if block.settings.mo_image != blank %}
+              <img class="mobile-image" src="{{ block.settings.mo_image | image_url }}" width="auto" height="auto" alt="{{ block.settings.mo_image.alt }}">
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="revolutionary-technology">
+      {{ section.settings.bottom_text }}
+    </div>
+    {% if section.settings.button_text != blank %}
+      <div class="buy-button simple-button">
+        <a href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+      </div>
+    {% endif %}
+    {% if section.settings.risk_text != blank %}
+      <p class="risk-text">{{ section.settings.risk_text }}</p>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Revolutionary section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "header",
+        "content": "Section content"
+      },
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "section_sub_heading",
+        "label":"Sub Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_image",
+        "label": "Icon image"
+      },
+      {
+        "type": "richtext",
+        "id": "bottom_text",
+        "label": "Text"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button url"
+      },
+      {
+        "type": "text",
+        "id":"button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "text",
+        "id": "risk_text",
+        "label": "Risk text"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "header",
+        "content": "Desktop padding"
+      },
+      {
+        "type": "range",
+        "id": "desktop_padding_top",
+        "min": 10,
+        "max": 110,
+        "step": 1,
+        "unit": "px",
+        "label": "Desktop top padding",
+        "default":107
+      },
+      {
+        "type": "range",
+        "id": "desktop_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Desktop Bottom padding",
+        "default":56
+      },
+      {
+        "type": "header",
+        "content": "Tablet spacing"
+      },
+      {
+        "type": "range",
+        "id": "tablet_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Tablet top padding",
+        "default":50
+      },
+      {
+        "type": "range",
+        "id": "tablet_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Tablet Bottom padding",
+        "default":50
+      },
+      {
+        "type": "header",
+        "content": "Mobile spacing"
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile top padding",
+        "default":48
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Bottom padding",
+        "default":48
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image_text",
+        "name":"Image with text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "revolutionary_heading",
+            "label": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "revolutionary_text",
+            "label": "Text"
+          },
+          {
+            "type": "select",
+            "id": "section_alignment",
+            "label": "Section direction",
+            "options": [
+              {
+                "label": "Image first",
+                "value": "row-reverse"
+              },
+              {
+                "label": "Image secound",
+                "value": "row"
+              }
+            ]
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mo_image",
+            "label": "Mobile image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name":"Revolutionary section"
+      }
+    ]
+  }
+{% endschema %}

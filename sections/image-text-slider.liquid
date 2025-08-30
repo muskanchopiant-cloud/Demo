@@ -1,0 +1,297 @@
+<style>
+  .image-text-slider-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+  }
+  .image-text-slider-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .image-text-slider-section .image-text-slider-details {
+    position: relative;
+  }
+  .image-text-slider-section .image-text-slider-details h2 {
+    font-family: Coolvetica;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0;
+    padding-bottom: 47px;
+    color: #253C7A;
+  }
+  .image-text-slider-section .image-text-slider-information {
+    max-width: 1323px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .image-text-slider-section .image-text-slider-info {
+    display: flex !important;
+    align-items: center;
+    gap: 38px;
+  }
+  .image-text-slider-section .slider-image{
+    border: 5px solid;
+    border-radius: 30px;
+  }
+  .image-text-slider-section .slider-image img {
+    display: block;
+    max-width: 100%;
+    border-radius: 26px;
+  }
+  .image-text-slider-section .text-slider p {
+    font-family: "Lexend", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0.6px;
+    text-align: left;
+    color: #2D2D2D;
+    margin: 0;
+    max-width: 168px;
+    width: 100%;
+  }
+  .image-text-slider-section .slick-slider{
+    position: unset;
+  }
+  .image-text-slider-section button.slick-next.slick-arrow,
+  .image-text-slider-section button.slick-prev.slick-arrow {
+    font-size: 0;
+    background: no-repeat;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 62%;
+  }
+  .image-text-slider-section button.slick-prev.slick-arrow {
+    left: 5px;
+  }
+  .image-text-slider-section button.slick-next.slick-arrow {
+    right: 50px;
+  }
+  .image-text-slider-section button.slick-next.slick-arrow:before{
+    background-image: url('https://cdn.shopify.com/s/files/1/0585/7610/9670/files/Group_25603.svg?v=1729240668');
+  }
+  .image-text-slider-section button.slick-prev.slick-arrow:after{
+    background-image: url('https://cdn.shopify.com/s/files/1/0585/7610/9670/files/Group_25809.svg?v=1729240668');
+  }
+  .image-text-slider-section button.slick-next.slick-arrow:before,
+  .image-text-slider-section button.slick-prev.slick-arrow:after{
+    content: '';
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 38px;
+    width: 38px;
+    display: block;
+  }
+  @media screen and (max-width: 1024px){
+    .image-text-slider-section .image-text-slider-info {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .image-text-slider-section .text-slider p{
+      font-size: 22px;
+      line-height: 25px;
+    }
+    .image-text-slider-section button.slick-prev.slick-arrow {
+      left: 0;
+      z-index: 1;
+    }
+    .image-text-slider-section button.slick-next.slick-arrow {
+      right: 0;
+    }
+  }
+  @media screen and (max-width: 767px){
+   .image-text-slider-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_top_padding }}px;
+      padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+    }
+    .image-text-slider-section .image-text-slider-details h2{
+      font-size: 30px;
+      line-height: 36px;
+    }
+    .image-text-slider-section .image-text-slider-info {
+      flex-direction: column;
+      gap: 13px;
+    }
+    .image-text-slider-section .text-slider p{
+      font-size: 16.55px;
+      line-height: 19.99px;
+      text-align: center;
+    }
+    .image-text-slider-section .slider-image{
+      border-radius: 21px;
+    }
+    .image-text-slider-section .slider-image img{
+      max-width: 133px;
+      border-radius: 17px;
+    }
+    .image-text-slider-section button.slick-next.slick-arrow:before,
+    .image-text-slider-section button.slick-prev.slick-arrow:after{
+      height: 21px;
+      width: 21px;
+    }
+    .image-text-slider-section button.slick-next.slick-arrow {
+      right: 0;
+    }
+    .image-text-slider-section button.slick-prev.slick-arrow {
+      left: 0;
+      z-index: 1;
+    }
+  }
+</style>
+<section class="image-text-slider-section {{ section.settings.custom_class }} image-text-slider-{{ section.id }}">
+  <div class="page-width">
+    <div class="image-text-slider-details">
+      <h2>{{ section.settings.headding }}</h2>
+      <div class="image-text-slider-information">
+        {% for block in section.blocks %}
+          <div class="image-text-slider-info" id="slider-{{ block.id }}">
+            <style>
+              #slider-{{ block.id }} .slider-image{
+                border-color: {{ block.settings.border_color }};
+              }
+            </style>
+            <div class="slider-image-info">
+              <div class="slider-image">
+                {% if block.settings.slider_image != blank %}
+                  <img src="{{ block.settings.slider_image | image_url }}" alt="Tab Image" width="auto" height="auto">
+                {% endif %}
+              </div>
+            </div>
+            <div class="text-slider-info">
+              <div class="text-slider">
+                {{ block.settings.text }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $('.image-text-slider-information').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }
+  ]
+  });
+</script>
+{% schema %}
+{
+  "name": "Imahe text slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headding",
+      "label": "Headding"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class"
+    },
+    {
+      "type": "number",
+      "id": "container_size",
+      "label": "Page width",
+    },
+    {
+      "type": "range",
+      "id": "top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Section top padding"
+    },
+    {
+      "type": "range",
+      "id": "bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Section bottom padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Mobile top padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Mobile bottom padding"
+    }
+  ],
+  "blocks":[
+    {
+      "name":"Slider content",
+      "type":"text",
+      "settings":[
+        {
+          "type": "image_picker",
+          "id": "slider_image",
+          "label": "Slider image"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border color"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets":[
+  {
+    "name": "Image text slider"
+  }
+]
+}
+{% endschema %}

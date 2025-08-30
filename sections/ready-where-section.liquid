@@ -1,0 +1,220 @@
+{% style %}
+  .ready-where-services-section.section-{{ section.id }} {
+    {% if section.settings.bg_image != blank %}
+      background-image:url({{ section.settings.bg_image | image_url }});
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    {% endif %}
+    padding-top:{{ section.settings.desktop_padding_top }}px;
+    padding-bottom:{{ section.settings.desktop_padding_bottom }}px;
+  }
+  .ready-where-services-section .page-width{
+    max-width:{{ section.settings.container_size }}px;
+    margin:0 auto;
+    padding:0 15px;
+  }
+  .ready-where-services-section .services-dertails h2 {
+    font-family: Inter;
+    font-size: 43px;
+    font-weight: 700;
+    line-height: 52.04px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    padding-bottom: 56px;
+  }
+  .ready-where-services-section .smpl-services-content {
+    display: grid;
+    gap: 56px;
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    {% if section.settings.border_check %}
+      border-bottom: 1px solid #C8C8C8;
+    {% endif %}
+    justify-content: center;
+  }
+  .ready-where-services-section .services-image-text img {
+    max-width: 160px;
+    width: 100%;
+  }
+  .ready-where-services-section .services-image-text h3 {
+    padding-top: 21px;
+    color: #282828;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25.56px;
+    letter-spacing: -0.342px;
+  }
+        
+  @media screen and (max-width:1024px) {
+    .ready-where-services-section.section-{{ section.id }} {
+      padding-top:{{ section.settings.tablet_padding_top }}px;
+      padding-bottom:{{ section.settings.tablet_padding_bottom }}px;
+    }
+  }
+  @media screen and (max-width:767px) {
+    .ready-where-services-section.section-{{ section.id }} {
+      padding-top:{{ section.settings.mobile_padding_top }}px;
+      padding-bottom:{{ section.settings.mobile_padding_bottom }}px;
+    }
+    .ready-where-services-section .services-dertails h2{
+      font-size: 32px;
+      line-height: 48px;
+      padding-bottom: 44px;
+    }
+    .ready-where-services-section .services-image-text h3 {
+      font-size: 18px;
+      line-height: 25.56px;
+    }
+  }
+{% endstyle %}
+<section class="ready-where-services-section section-{{ section.id }} {{ section.settings.custom_class }}">
+  <div class="page-width">
+    <div class="services-dertails">
+      <h2>{{ section.settings.section_heading }}</h2>
+      <div class="smpl-services-content">
+        {% for block in section.blocks %}
+          <div class="services-image-text">
+            {% if block.settings.image_services != blank %}
+              <img src="{{ block.settings.image_services | image_url }}" width="auto" height="auto" alt="{{ block.settings.image_services.alt }}">
+            {% endif %}
+            {% if block.settings.services_heading != blank %}
+              <h3>{{ block.settings.services_heading }}</h3>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Ready where services",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "checkbox",
+        "id": "border_check",
+        "label": "Border bottom",
+        "default":true
+      },
+      {
+        "type": "header",
+        "content": "Desktop padding"
+      },
+      {
+        "type": "range",
+        "id": "desktop_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Desktop top padding",
+        "default":69
+      },
+      {
+        "type": "range",
+        "id": "desktop_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Desktop Bottom padding",
+        "default":0
+      },
+      {
+        "type": "header",
+        "content": "Tablet spacing"
+      },
+      {
+        "type": "range",
+        "id": "tablet_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Tablet top padding",
+        "default":50
+      },
+      {
+        "type": "range",
+        "id": "tablet_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Tablet Bottom padding",
+        "default":0
+      },
+      {
+        "type": "header",
+        "content": "Mobile spacing"
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile top padding",
+        "default":64
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Bottom padding",
+        "default":0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image_text",
+        "name":"Image with text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_services",
+            "label": "Image icon"
+          },
+          {
+            "type": "text",
+            "id": "services_heading",
+            "label": "Heading text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Ready Where services section"
+      }
+    ]
+  }
+{% endschema %}

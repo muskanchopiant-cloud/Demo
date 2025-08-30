@@ -1,0 +1,376 @@
+<style>
+  .protection-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background: linear-gradient(180deg, rgba(203, 239, 255, 0.26) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  .protection-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .section-heading {
+    font-family: "Inter", sans-serif;
+    font-size: 43px;
+    font-weight: 700;
+    line-height: 52.04px;
+    letter-spacing: -0.022em;
+    text-align: center;
+    margin: 0;
+    color:{{ section.settings.section_heading_color }}
+  }
+  .protection-section .section-heading {
+    max-width: 566px;
+    width: 100%;
+    margin: 0 auto 40px;
+  }
+  .protection-section .protection-information {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    row-gap: 33px;
+    column-gap: 21px;
+    padding-bottom: 62px;
+  }
+  .protection-section .protection-info {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    vertical-align: bottom;
+  }
+  .protection-section .protection-info img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+  .protection-section .protection-content {
+    position: absolute;
+    bottom: 33px;
+    left: 0;
+    background: #00A9FF;
+    max-width: 258px;
+    width: 100%;
+    padding-block: 13px;
+    text-align: center;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+  .protection-section .protection-content p {
+    font-family: Inter;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30.26px;
+    letter-spacing: -0.022em;
+    text-align: left;
+    margin: 0;
+    padding-left: 29px;
+    color: #fff;
+  }
+  .buy-button {
+    position: relative;
+    overflow: hidden;
+    max-width: 317px;
+    margin: 0 auto;
+    color: {{ section.settings.button_text_color }};
+    text-align: center;
+    z-index: 1;
+  }
+  .buy-button:before {
+    content: "";
+    position: absolute;
+    width: 4.54px;
+    height: 130px;
+    transform: rotate(-19.043deg);
+    flex-shrink: 0;
+    top: -40px;
+    left: -40px;
+    z-index: 2;
+    display: block;
+    background: #FFF;
+    animation: right-move 1.9s infinite ease;
+  }
+  .buy-button:after {
+    content: "";
+    position: absolute;
+    width: 17.985px;
+    height: 130px;
+    transform: rotate(-19.043deg);
+    flex-shrink: 0;
+    top: -40px;
+    left: -40px;
+    background: #FFF;
+    z-index: 1;
+    animation: right-move 1.9s infinite ease;
+    animation-delay: 0.1s;
+  }
+  @keyframes right-move{
+    0% {
+      left: -30px;
+    }
+    100% {
+        left: 150%;
+    }
+  }
+  .buy-button a {
+    text-decoration: none;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 26px 10px;
+    border-radius: 50px;
+    background: {{ section.settings.button_bg_color }};
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+  }
+  .buy-button a:hover:before {
+    visibility: visible;
+    transform: scale(3.4) translate(-15%, 0);
+    transition: transform 0.5s ease;
+  }
+  .buy-button a:before {
+    content: "";
+    background: {{ section.settings.button_hover_color }};
+    position: absolute;
+    width: 96px;
+    bottom: -50%;
+    transform: translate(-50%, 20%) scale(0.1);
+    left: 50%;
+    height: 96px;
+    border-radius: 100%;
+    visibility: hidden;
+    z-index: -2;
+    transition: transform 0.5s ease, visibility 0.4s ease;
+  }
+  .buy-button a:hover:after {
+    visibility: visible;
+    transform: scale(3.4) translate(-15%, 0);
+    transition: transform 0.5s ease;
+  }
+  .buy-button a:after {
+    content: "";
+    background: {{ section.settings.button_hover_color }}26;
+    width: 148px;
+    bottom: -50%;
+    transform: translate(-80%, 20%) scale(1.8);
+    left: 50%;
+    height: 148px;
+    position: absolute;
+    border-radius: 100%;
+    visibility: hidden;
+    z-index: -2;
+    transition: transform 0.5s ease, visibility 0.4s ease;
+  }
+  .bottom-text {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22.72px;
+    letter-spacing: -0.019em;
+    text-align: center;
+  }
+  @media screen and (max-width: 1024px){
+    .protection-{{ section.id }} {
+        padding-top: {{ section.settings.tab_top_padding }}px;
+        padding-bottom: {{ section.settings.tab_bottom_padding }}px;
+     }
+  }
+  @media screen and (max-width: 767px){
+     .protection-{{ section.id }} {
+        padding-top: {{ section.settings.mob_top_padding }}px;
+        padding-bottom: {{ section.settings.mob_bottom_padding }}px;
+     }
+  }
+</style>
+<section class="protection-section {{ section.settings.custom_class }} protection-{{ section.id }}">
+  <div class="page-width">
+    <div class="protection-details">
+      <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
+      <div class="protection-information">
+        {% for block in section.blocks %}
+          <div class="protection-info">
+            {% if block.settings.protection_image != blank %}
+              <img src="{{ block.settings.protection_image | image_url }}" alt="" width="auto" height="auto" >
+            {% endif %}
+            <div class="protection-content">
+              {{ block.settings.protection_text }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="buy-button">
+        {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_url }}">
+          {{ section.settings.button_text }}
+        </a>
+        {% endif %}
+      </div>
+      <div class="bottom-text">{{ section.settings.bottom_text }}</div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Protection section",
+    "settings": [
+        {
+          "type": "text",
+          "id": "section_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "color",
+          "id": "section_heading_color",
+          "label": "Section heading color"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button url"
+        },
+        {
+          "type": "text",
+          "id":"button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "header",
+          "content": "Button settings"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button text color"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button background color"
+        },
+        {
+          "type": "color",
+          "id": "button_hover_color",
+          "label": "Hover color"
+        },
+        {
+          "type": "text",
+          "id": "bottom_text",
+          "label": "Bottom text"
+        },
+        {
+          "type": "text",
+          "id": "custom_class",
+          "label": "Custom class"
+        },
+        {
+          "type": "number",
+          "id": "container_size",
+          "label": "Page width",
+        },
+        {
+          "type": "header",
+          "content": "Desktop padding"
+        },
+        {
+          "type": "range",
+          "id": "top_padding",
+          "min": 0,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "default": 0,
+          "label": "Section top padding"
+        },
+        {
+          "type": "range",
+          "id": "bottom_padding",
+          "min": 0,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "default": 0,
+          "label": "Section bottom padding"
+        },
+        {
+          "type": "header",
+          "content": "Tablet padding"
+        },
+        {
+          "type": "range",
+          "id": "tab_top_padding",
+          "min": 0,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "default": 0,
+          "label": "Tablet top padding"
+        },
+        {
+          "type": "range",
+          "id": "tab_bottom_padding",
+          "min": 0,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "default": 0,
+          "label": "Tablet bottom padding"
+        },
+        {
+          "type": "header",
+          "content": "Mobile padding"
+        },
+        {
+          "type": "range",
+          "id": "mob_top_padding",
+          "min": 0,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "default": 0,
+          "label": "Mobile top padding"
+        },
+        {
+          "type": "range",
+          "id": "mob_bottom_padding",
+          "min": 0,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "default": 0,
+          "label": "Mobile bottom padding"
+        }
+      ],
+      "blocks":[
+        {
+          "name":"Information",
+          "type":"image",
+          "settings":[
+            {
+              "type": "image_picker",
+              "id": "protection_image",
+              "label": "Protection image"
+            },
+            {
+              "type": "richtext",
+              "id": "protection_text",
+              "label": "Protection text"
+            }
+          ]
+        }
+      ],
+    "presets":[
+      {
+        "name": "Protection section"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,470 @@
+<style>
+  .benefits-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background: linear-gradient(180deg, rgba(255, 231, 217, 0.32) 0%, rgba(252, 175, 187, 0.32) 100%);
+  }
+  .benefits-{{ section.id }} .page-width {
+    max-width: {{ section.settings.page_width }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .benefits-section .benefits-details h2 {
+    font-family: "Aleo", serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+    text-align: center;
+    color: #7D0052;
+    margin: 0;
+    letter-spacing: 0;
+    padding-bottom: 16px;
+    display: block !important;
+  }
+  .benefits-section .sub-headding p {
+    font-family: "Aleo", serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0;
+    color: #5A344F;
+  }
+  .benefits-section .benefits-information {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    gap: 41px;
+    padding: 64px 0;
+  }
+  .benefits-section .benefits-image {
+    width: calc(56% - 20.5px);
+    position: relative;
+  }
+  .benefits-section .benefits-info {
+    width: calc(44% - 20.5px);
+  }
+   iframe.youtube {
+    max-width: 100%;
+    border-radius: 12px;
+    border: none;
+  }
+  .benefits-inner-image img {
+    display: block;
+    max-width: 100%;
+    position: absolute;
+    top: 18px;
+    left: 20px;
+  }
+  .benefits-section .benefits-detail {
+    padding-bottom: 24px;
+  }
+  .benefits-section .benefits-detail:last-child {
+    padding-bottom: 0;
+  }
+  .benefits-section .benefit-item h3 {
+    font-family: "Aleo", serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 24px;
+    margin: 0;
+    letter-spacing: 1px;
+    color: #7D0052;
+    padding-bottom: 8px;
+  }
+  .benefits-section .benefit-text p {
+    font-family: "Helvetica", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+    letter-spacing: 0;
+    color: #5A344F;
+  }
+  .benefits-section .icons-information {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 56px;
+  }
+  .benefits-section .icon-item img {
+    max-width: 100%;
+    display: block;
+  }
+  .benefits-section .icon-text p {
+    font-family: "Helvetica", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0;
+    color: #1F1F1F;
+    padding-top: 12px;
+    text-transform: uppercase;
+  }
+
+
+  .benefits-image {
+    position: relative;
+    padding: 30.4% 0 0 0;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .benefits-image iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @media screen and (max-width: 1024px){
+    .benefits-{{ section.id }} {
+        padding-top: {{ section.settings.tab_top_padding }}px;
+        padding-bottom: {{ section.settings.tab_bottom_padding }}px;
+     }
+    .benefits-section .benefits-details h2{
+      font-size: 36px;
+      line-height: 50px;
+    }
+    .benefits-section .sub-headding p{
+      font-size: 20px;
+      line-height: 27px;
+    }
+    .benefits-section .benefits-information{
+      padding: 40px 0;
+      gap: 30px;
+    }
+    .benefits-section .benefits-detail {
+      padding-bottom: 16px;
+    }
+    .benefits-section .benefit-item h3{
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .benefits-section .benefit-text p{
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .benefits-section .icons-information{
+      gap: 14px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .benefits-{{ section.id }} {
+      padding-top: {{ section.settings.mob_top_padding }}px;
+      padding-bottom: {{ section.settings.mob_bottom_padding }}px;
+    }
+    .benefits-{{ section.id }} .page-width{
+      padding: 0 24px;
+    }
+    .benefits-section .benefits-details h2{
+      font-size: 33px;
+      line-height: 40px;
+    }
+    .benefits-section .sub-headding p{
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .benefits-section .benefits-information {
+      display: block;
+      padding: 32px 0;
+    }
+    .benefits-section .benefits-image {
+      width: 100%;
+    }
+    .benefits-section .benefits-info {
+      width: 100%;
+      margin-top: 32px;
+    }
+    .benefits-image{
+      padding: 56.6% 0 0 0;
+    }
+    .benefits-inner-image img{
+      max-width: 64px !important;
+    }
+    .benefits-section .benefit-item h3{
+      line-height: 24px;
+      padding-bottom: 0;
+    }
+    .benefits-section .icons-information {
+      display: flex;
+      margin-right: -24px;
+    }
+    .icon-item {
+      padding-right: 56px;
+    }
+  }
+</style>
+<section class="benefits-section {{ section.settings.custom_class }} benefits-{{ section.id }}">
+  <div class="page-width">
+    <div class="benefits-details">
+      <h2>{{ section.settings.headding }}</h2>
+      <div class="sub-headding">
+        {{ section.settings.sub_headding }}
+      </div>
+      <div class="benefits-information">
+        <div class="benefits-image">
+          {%- if section.settings.video_url.type == 'youtube' -%}
+            <iframe
+              src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}"
+              class="youtube"
+              allow="autoplay; encrypted-media"
+              title="{{ section.settings.description | escape }}"
+            ></iframe>
+          {%- else -%}
+            <iframe
+              src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}"
+              class="vimeo"
+              allow="autoplay; encrypted-media"
+              title="{{ section.settings.description | escape }}"
+            ></iframe>
+          {%- endif -%}
+
+          <div class="benefits-inner-image">
+            {% if section.settings.benefits_inner_image != blank %}
+              <img src="{{ section.settings.benefits_inner_image | image_url }}" width="auto" height="auto">
+            {% endif %}
+          </div>
+        </div>
+        <div class="benefits-info">
+          {% for block in section.blocks %}
+            {% if block.settings.benefit_title != blank %}
+              <div class="benefits-detail">
+                <div class="benefit-item">
+                  <h3>{{ block.settings.benefit_title }}</h3>
+                  <div class="benefit-text">
+                    {{ block.settings.benefit_text }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="icons-information">
+        {% for block in section.blocks %}
+          {% if block.settings.icon != blank %}
+            <div class="icon-item">
+              <img src="{{ block.settings.icon | image_url }}" width="auto" height="auto">
+              <div class="icon-text">{{ block.settings.icon_text }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+   $(document).ready(function(){
+    function initializeSlick() {
+      if ($(window).width() <= 767) {
+        if (!$('.icons-information').hasClass('slick-initialized')) {
+          $('.icons-information').slick({
+            dots: false,
+            arrows: false,
+            infinite: true,
+            autoplay: false,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            variableWidth: true
+          });
+        }
+      } else {
+        if ($('.icons-information').hasClass('slick-initialized')) {
+          $('.icons-information').slick('unslick');
+        }
+      }
+    }
+
+    // Initialize slick on page load and on window resize
+    initializeSlick();
+    $(window).resize(function() {
+      initializeSlick();
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Benefits Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headding",
+      "label": "Headding"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_headding",
+      "label": "Sub Headding"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
+      "label": "URL",
+      "info": "Video plays in the page."
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Video alt text",
+      "info": "Describe the video for customers using screen readers."
+    },
+    {
+      "type": "image_picker",
+      "id": "benefits_inner_image",
+      "label": "Benefit Inner Image"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "number",
+      "id": "page_width",
+      "label": "Page Width",
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Section Top Padding"
+    },
+    {
+      "type": "range",
+      "id": "bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Section Bottom Padding"
+    },
+    {
+      "type": "header",
+      "content": "Tablet Padding"
+    },
+    {
+      "type": "range",
+      "id": "tab_top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Tablet Top Padding"
+    },
+    {
+      "type": "range",
+      "id": "tab_bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Tablet Bottom Padding"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "mob_top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Mobile Top Padding"
+    },
+    {
+      "type": "range",
+      "id": "mob_bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Mobile Bottom Padding"
+    }
+  ],
+  "blocks":[
+    {
+      "name":"Benefit",
+      "type":"text",
+      "settings":[
+        {
+          "type": "text",
+          "id": "benefit_title",
+          "label": "Benefit Title"
+        },
+        {
+          "type": "richtext",
+          "id": "benefit_text",
+          "label": "Benefit Text"
+        }
+      ]
+    },
+    {
+      "name":"Icon",
+      "type":"image",
+      "settings":[
+        {
+          "type":"image_picker",
+          "id":"icon",
+          "label":"Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "icon_text",
+          "label": "Icon Text"
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name": "Benefits Section"
+    }
+  ]
+}
+{% endschema %}

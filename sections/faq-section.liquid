@@ -1,0 +1,271 @@
+<style>
+  .faq-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background: {{ section.settings.background_color }};
+  }
+  .faq-section .section-heading {
+    padding-bottom: 67px;
+  }
+  .faq-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .faq-info {
+    background-color: white;
+    color: #1E1E1E;
+    border-radius: 8px;
+    margin-bottom: 51px;
+  }
+  .question {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    text-align: left;
+    padding: 26px 25px 25px 39px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    letter-spacing: 0.11px;
+    transition: 0.3s;
+  }
+  .question.active {
+    font-weight: 800;
+    transition: 0.3s;
+  }
+  .question:before {
+    content: '';
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-right: 2px solid #000;
+    position: absolute;
+    top: 31px;
+    right: 31px;
+    transition: 0.5s;
+  }
+  .question::after {
+    content: '';
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-bottom: 2px solid #000;
+    position: absolute;
+    top: 25px;
+    right: 26px;
+  }
+  .question.active:before {
+    display: none;
+  }
+  .answercont {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .answer {
+    padding: 0 0px 45px 39px;
+    line-height: 29px;
+    font-family: inter;
+    font-weight: 400;
+    font-size: 18px;
+    max-width: 732px;
+  }
+  @media screen and (max-width: 1024px){
+    .faq-{{ section.id }} {
+        padding-top: {{ section.settings.tab_top_padding }}px;
+        padding-bottom: {{ section.settings.tab_bottom_padding }}px;
+     }
+  }
+  @media screen and (max-width: 767px){
+     .faq-{{ section.id }} {
+        padding-top: {{ section.settings.mob_top_padding }}px;
+        padding-bottom: {{ section.settings.mob_bottom_padding }}px;
+     }
+    .faq-info{
+      margin-bottom: 16px;
+    }
+    .faq-section .section-heading {
+      padding-bottom: 32px;
+    }
+    .question {
+      padding: 16px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .answer{
+      padding: 0 16px 16px;
+      line-height: 22px;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+</style>
+<section class="faq-section {{ section.settings.custom_class }} faq-{{ section.id }}">
+  <div class="page-width">
+    <div class="faq-details">
+      <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
+      <div class="faq-information">
+        {% for block in section.blocks %}
+          <div class="faq-info">
+            <div class="question">
+              {{ block.settings.question }}
+            </div>
+            <div class="answercont">
+              <div class="answer">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  let question = document.querySelectorAll(".question");
+
+  question.forEach(question => {
+    question.addEventListener("click", event => {
+      const active = document.querySelector(".question.active");
+      if(active && active !== question ) {
+        active.classList.toggle("active");
+        active.nextElementSibling.style.maxHeight = 0;
+      }
+      question.classList.toggle("active");
+      const answer = question.nextElementSibling;
+      if(question.classList.contains("active")){
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.style.maxHeight = 0;
+      }
+    })
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Faq section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "number",
+      "id": "container_size",
+      "label": "Page width",
+    },
+    {
+      "type": "header",
+      "content": "Desktop padding"
+    },
+    {
+      "type": "range",
+      "id": "top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Section top padding"
+    },
+    {
+      "type": "range",
+      "id": "bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Section bottom padding"
+    },
+    {
+      "type": "header",
+      "content": "Tablet padding"
+    },
+    {
+      "type": "range",
+      "id": "tab_top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Tablet top padding"
+    },
+    {
+      "type": "range",
+      "id": "tab_bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Tablet bottom padding"
+    },
+    {
+      "type": "header",
+      "content": "Mobile padding"
+    },
+    {
+      "type": "range",
+      "id": "mob_top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Mobile top padding"
+    },
+    {
+      "type": "range",
+      "id": "mob_bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Mobile bottom padding"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "accordion",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "text",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Faq Section"
+    }
+  ]
+}
+{% endschema %}

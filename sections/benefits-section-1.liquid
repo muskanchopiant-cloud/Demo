@@ -1,0 +1,349 @@
+{% style %}
+  #{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    {% if section.settings.background_color != blank %}
+      background-color:{{ section.settings.background_color }};
+    {% endif %}
+    {% if section.settings.bg_image != blank %}
+      background-image: url({{ section.settings.bg_image | image_url }});
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    {% endif %}
+  }
+  #{{ section.id }} .page-width {
+    max-width: {{ section.settings.page_width }}px;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .benefits-section .benefits-information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* align-items: center; */
+    justify-content: center;
+   }
+  .benefits-section .benefits-info {
+    background-image: url(https://cdn.shopify.com/s/files/1/0585/7610/9670/files/Clipping_-_Rectangle_531_copy_2.png?v=1756294540);
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    padding: 38px 18px 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .benefits-section .block-sub-heading {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: #252424;
+  }
+  .benefits-section .block-sub-heading {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: #252424;
+    padding-bottom: 8px;
+   }
+  .benefits-section .block-description p {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #252424;
+  }
+  .benefits-section .benefits-info:nth-child(1) {
+    gap: 17px;
+  }
+  .benefits-section .benefits-info:nth-child(1) .benefit-image img {
+    max-width: 264px;
+    margin: -7px 0px 0 -86px;
+   }
+  .benefits-section .benefits-info:nth-child(1) .benefit-text {
+    max-width: 372px;
+    width: 100%;
+  }
+  .benefits-section .benefits-info:nth-child(2) {
+    gap: 26px;
+  }
+  .benefits-section .benefits-info:nth-child(2) .benefit-image img {
+    max-width: 194px;
+    margin: 12px 0px 0 -10px;
+  }
+  .benefits-section .benefits-info:nth-child(2) .benefit-text {
+    max-width: 416px;
+    width: 100%;
+  }
+  .benefits-section .benefits-info:nth-child(3) {
+    grid-column: span 2;
+    justify-self: center;
+    max-width: 696px;
+    width: 100%;
+    background-size: cover;
+    gap: 32px;
+    padding: 3px 20px 9px 0;
+    border-radius: 35px;
+    margin-top: 13px;
+  }
+  .benefits-section .benefits-info:nth-child(3) .benefit-image img {
+    margin: -2px 0 0 -159px;
+    max-width: 239px;
+  }
+  .benefits-section .benefits-info:nth-child(3) .benefit-text {
+    max-width: 480px;
+    width: 100%;
+  }
+  @media screen and (max-width: 1024px) {
+    #{{ section.id }} {
+      padding-top: {{ section.settings.tablet_padding_top }}px;
+      padding-bottom: {{ section.settings.tablet_padding_bottom }}px;
+    }
+    .benefits-section .benefits-info:nth-child(3){
+        padding: 38px 18px 40px 0;
+        margin-top: 20px;
+        gap: 25px;
+        border-radius: 50px;
+        max-width: 580px;
+    }
+    .benefits-section .benefits-information{
+        display: block;
+    }
+    .benefits-section .benefits-info:nth-child(3) .benefit-image img{
+        margin: -2px 0 0 -100px;
+    }
+
+  }
+  
+  @media screen and (max-width: 767px) {
+    #{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      {% if section.settings.mobile_bg_image != blank %}
+        background-image: url({{ section.settings.mobile_bg_image | image_url }});
+      {% endif %}
+    }
+    .benefits-section .block-sub-heading{
+        font-size: 19px;
+        line-height: 22px;
+    }
+    .benefits-section .block-description p{
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .benefits-section .benefits-info:nth-child(1) .benefit-image img {
+        max-width: 143px;
+        margin: 0px 0px 0 -50px;
+    }
+    .benefits-section .benefits-info{
+        padding: 8px 9px 14px 0;
+    }
+    .benefits-section .benefits-info:nth-child(1) {
+        gap: 10px;
+        max-width: 315px;
+        width: 100%;
+        margin: 0 auto;
+        background-size: contain;
+    }
+    .benefits-section .benefits-info:nth-child(2) .benefit-image img {
+        max-width: 105px;
+        margin: 0px 0px 0 -19px;
+    }
+    .benefits-section .benefits-info:nth-child(2) {
+        gap: 14px;
+        max-width: 315px;
+        width: 100%;
+        margin: 0 auto;
+        background-size: contain;
+        padding: 18px 13px 14px 0;
+        margin-top: 17px;
+    }
+    .benefits-section .benefits-info:nth-child(3) {
+        padding: 16px 5px 21px 0;
+        margin-top: 20px;
+        gap: 10px;
+        border-radius: 0;
+        max-width: 315px;
+        background-size: contain;
+    }
+    .benefits-section .benefits-info:nth-child(3) .benefit-image img {
+        margin: 0px 0 0 -39px;
+        max-width: 130px;
+    }
+  }
+{% endstyle %}
+<section id="{{ section.id }}" class="benefits-section {{ section.settings.custom_class }}">
+  <div class="page-width">
+   <div class="benefits-details">
+    <div class="benefits-information">
+        {% for block in section.blocks %}
+            <div class="benefits-info">
+                <div class="benefit-image">
+                    {% if block.settings.image != blank %}
+                        <img
+                            src="{{ block.settings.image | image_url }}"
+                            height="auto"
+                            width="auto"
+                            alt="{{ block.settings.image }}"
+                        >
+                    {% endif %}
+                </div>
+                <div class="benefit-text">
+                    {% if block.settings.sub_heading != blank %}
+                        <h3 class="block-sub-heading">{{ block.settings.sub_heading }}</h3>
+                    {% endif %}
+                    {% if block.settings.supplement_info != blank %}
+                        <div class="block-description">
+                            {{ block.settings.supplement_info }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+   </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Benefits Section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General Settings"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "custom Class"
+      },
+      {
+        "type": "number",
+        "id": "page_width",
+        "label": "Page Width",
+        "info": "Add PX Number"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Desktop Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_bg_image",
+        "label": "Mobile Background Image"
+      },
+      {
+        "type" : "header",
+        "content" : "Desktop Section Padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 36
+      },
+      {
+        "type" : "header",
+        "content" : "Tablet Section Padding"
+      },
+      {
+        "type": "range",
+        "id": "tablet_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "tablet_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 36
+      },
+      {
+        "type" : "header",
+        "content" : "Mobile Section Padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 36 
+      }
+    ],
+    "blocks": [
+      {
+        "type": "features",
+        "name": "Features",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "sub_heading",
+                "label": "Sub heading"
+            },
+            {
+                "type": "richtext",
+                "id": "supplement_info",
+                "label": "Supplement info"
+            }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Benefits section"
+      }
+    ]
+  }
+{% endschema %}

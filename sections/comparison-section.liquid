@@ -1,0 +1,387 @@
+<style>
+  .comparison-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background: linear-gradient(180deg, rgba(203, 239, 255, 0.26) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  .comparison-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .comparison-section .section-heading {
+    padding-bottom: 86px;
+    max-width: 566px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .comparison-section .comparison-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .comparison-section .comparison-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .comparison-section .middle-content-title {
+    background: #FF7900;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 2px solid #02344D;
+    border-bottom: none;
+  }
+  .comparison-section .left-content-title,
+  .comparison-section .left-content {
+    width: 42.5%;
+    position: relative;
+  }
+  .comparison-section .middle-content-title,
+  .comparison-section .middle-content {
+    width: 28.75%;
+  }
+  .comparison-section .right-content-title,
+  .comparison-section .right-content {
+    width: 28.75%;
+  }
+  .comparison-section .left-content-title p {
+    font-family: Inter;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 31.47px;
+    letter-spacing: -0.022em;
+    text-align: center;
+    margin: 0;
+    color: #02344D;
+    padding-top: 40px;
+  }
+  .comparison-section .middle-content-title p {
+    font-family: Inter;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 31.47px;
+    letter-spacing: 0.3px;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding-bottom: 19px;
+    padding-top: 19px;
+  }
+  .comparison-section .right-content-title p {
+    font-family: Inter;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 31.47px;
+    text-align: center;
+    color: #656565;
+    margin: 0;
+  }
+  .comparison-information {
+    background: #fff;
+    border: 2px solid #02344D;
+    border-radius: 10px;
+    margin-bottom: 80px;
+  }
+  .left-content:before {
+    content: '';
+    display: block;
+    border: 1px solid #02344D;
+    position: absolute;
+    height: 100%;
+    left: 100%;
+  }
+  .left-content:after {
+    content: '';
+    display: block;
+    border: 1px solid #02344D;
+    position: absolute;
+    height: 100%;
+    right: -68%;
+    top: 0;
+  }
+  .comparison-section .left-content p {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 64px;
+    text-align: left;
+    color: #000;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding-left: 82px;
+    letter-spacing: 0.2px;
+    border-bottom: 2px solid #02344D;
+  }
+  .comparison-section .comparison-info:last-child .left-content p {
+    border: none;
+  }
+  .comparison-section .middle-content-image img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .comparison-section .right-content img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .comparison-section a.comparison_button {
+    text-decoration: none;
+    font-family: Aleo;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    background: #642F4E;
+    border-radius: 8px;
+    padding: 16px 0;
+    max-width: 428px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 67px;
+  }
+  @media screen and (max-width: 1024px){
+    .protection-{{ section.id }} {
+        padding-top: {{ section.settings.tab_top_padding }}px;
+        padding-bottom: {{ section.settings.tab_bottom_padding }}px;
+     }
+  }
+  @media screen and (max-width: 767px){
+     .comparison-{{ section.id }} {
+        padding-top: {{ section.settings.mob_top_padding }}px;
+        padding-bottom: {{ section.settings.mob_bottom_padding }}px;
+     }
+    .comparison-section .section-heading{
+      padding-bottom: 40px;
+    }
+    .comparison-section .middle-content-title {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    .comparison-section .left-content-title p,
+    .comparison-section .middle-content-title p,
+    .comparison-section .right-content-title p {
+      font-size: 14px;
+      line-height: 16.94px;
+    }
+    .comparison-section .left-content-title p{
+      padding-top: 19px;
+    }
+    .comparison-section .left-content p {
+      padding-left: 16px;
+      padding-right: 16px;
+      line-height: 17px;
+      font-size: 16px;
+      padding-top: 19px;
+      padding-bottom: 21px;
+      text-align: center;
+    }
+    .comparison-section .middle-content-image img,
+    .comparison-section .right-content img{
+      max-width: 24px;
+      width: 100%;
+    }
+  }
+</style>
+<section class="comparison-section {{ section.settings.custom_class }} comparison-{{ section.id }}">
+  <div class="page-width">
+    <div class="comparison-details">
+      <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
+      <div class="comparison-content-info">
+        <div class="comparison-content">
+          <div class="comparison-title">
+            <div class="left-content-title">
+              {{ section.settings.left_content_title }}
+            </div>
+            <div class="middle-content-title">{{ section.settings.middle_content_title }}</div>
+            <div class="right-content-title">{{ section.settings.right_content_title }}</div>
+          </div>
+          <div class="comparison-information">
+            {% for block in section.blocks %}
+              <div class="comparison-info">
+                <div class="left-content">{{ block.settings.left_content }}</div>
+                <div class="middle-content">
+                  <div class="middle-content-image">
+                    {% if block.settings.middle_content != blank %}
+                      <img src="{{ block.settings.middle_content | image_url }}" width="auto" height="auto">
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="right-content">
+                  {% if block.settings.right_content != blank %}
+                    <img src="{{ block.settings.right_content | image_url }}" width="auto" height="auto">
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="buy-button">
+        {% if section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_url }}">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+      <div class="bottom-text">{{ section.settings.bottom_text }}</div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Comparison section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Headding"
+    },
+    {
+      "type": "richtext",
+      "id": "left_content_title",
+      "label": "Left title"
+    },
+    {
+      "type": "richtext",
+      "id": "middle_content_title",
+      "label": "Middle title"
+    },
+    {
+      "type": "richtext",
+      "id": "right_content_title",
+      "label": "Right content title"
+    },
+    {
+      "type":"url",
+      "id":"button_url",
+      "label":"Button link"
+    },
+    {
+      "type":"text",
+      "id":"button_text",
+      "label":"Button text"
+    },
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Bottom text"
+    },
+    {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "header",
+        "content": "Desktop padding"
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "header",
+        "content": "Tablet padding"
+      },
+      {
+        "type": "range",
+        "id": "tab_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Tablet top padding"
+      },
+      {
+        "type": "range",
+        "id": "tab_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Tablet bottom padding"
+      },
+      {
+        "type": "header",
+        "content": "Mobile padding"
+      },
+      {
+        "type": "range",
+        "id": "mob_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mob_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+  ],
+  "blocks":[
+    {
+      "name":"Comparison",
+      "type":"text",
+      "settings":[
+        {
+          "type": "richtext",
+          "id": "left_content",
+          "label": "Left content"
+        },
+        {
+          "type": "image_picker",
+          "id": "middle_content",
+          "label": "Middle content"
+        },
+        {
+          "type": "image_picker",
+          "id": "right_content",
+          "label": "Right content"
+        }
+      ]
+    }
+  ],
+  "presets":[
+  {
+    "name": "Comparison section"
+  }
+]
+}
+{% endschema %}

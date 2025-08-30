@@ -1,0 +1,331 @@
+<style>
+    .formula-{{ section.id }}{
+      padding-top: {{ section.settings.top_padding }}px;
+      padding-bottom: {{ section.settings.bottom_padding }}px;
+      background: #642F4E;
+    }
+    .formula-{{ section.id }} .page-width {
+      max-width: {{ section.settings.container_size }}px;
+      width: 100%;
+      padding: 0 15px;
+      margin: 0 auto;
+    }
+    .formula-section .formula-details {
+      position: relative;
+    }
+    .formula-section .formula-details h2 {
+      font-family: "Aleo", serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      letter-spacing: 0;
+    }
+    .formula-section .sub-headding {
+      padding-bottom: 70px;
+    }
+    .formula-section .sub-headding p {
+      font-family: "Aleo", serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 40px;
+      text-align: center;
+      margin: 0;
+      letter-spacing: 0;
+      color: #fff;
+    }
+    .formula-section .formula-info {
+      display: flex !important;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+    .formula-section .formula-image img {
+      max-width: 100%;
+    }
+    .formula-section .formula-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 16px;
+    }
+    .formula-section .formula-title img {
+      max-width: 100%;
+      display: block;
+    }
+    .formula-section .formula-title h3 {
+      font-family: "Aleo", serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 45px;
+      letter-spacing: -0.023em;
+      text-align: left;
+      color: #fff;
+      margin: 0;
+    }
+    .formula-section .formula-text-info {
+      max-width: 530px;
+      width: 100%;
+      padding-left: 16px;
+    }
+    .formula-section .formula-text-info ul li {
+      list-style: none;
+      font-family: Helvetica;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 21.6px;
+      text-align: left;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 0;
+      padding-bottom: 7px;
+    }
+    .formula-section button#prev-slide,
+    .formula-section button#next-slide{
+      padding: 0;
+      background: none;
+      border: none;
+      position: absolute;
+      top: 56%;
+    }
+    .formula-section button#prev-slide {
+      left: 0px;
+    }
+    .formula-section button#next-slide{
+      right: 0px;
+    }
+  @media screen and (max-width: 1024px){
+    .formula-section .formula-details h2{
+      font-size: 40px;
+    }
+    .formula-section .sub-headding {
+      padding-bottom: 50px;
+    }
+    .formula-section .formula-info{
+      gap: 0;
+    }
+    .formula-section .formula-title h3{
+      font-size: 30px;
+    }
+    .formula-section .formula-title{
+      padding-bottom: 10px;
+    }
+    .formula-section .formula-text-info{
+      padding-left: 0;
+    }
+    .formula-section button#prev-slide,
+    .formula-section button#next-slide{
+      top: 100%;
+    }
+  }
+   @media screen and (max-width: 767px){
+     .formula-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_top_padding }}px;
+      padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+    }
+    .formula-section .formula-details h2 {
+      font-size: 30px;
+      line-height: 40px;
+    }
+   .formula-section .sub-headding {
+      padding-bottom: 40px;
+    }
+   .formula-section .sub-headding p{
+     font-size: 20px;
+     line-height: 25px;
+   }
+   .formula-section .formula-info{
+     flex-direction: column-reverse;
+   }
+   .formula-section .formula-title h3 {
+      font-size: 25px;
+    }
+   .formula-section .formula-text-info ul li{
+     padding-bottom: 0;
+   }
+   .formula-section button#prev-slide img,
+   .formula-section button#next-slide img {
+      max-width: 50px;
+      width: 100%;
+    }
+   }
+</style>
+<section class="formula-section {{ section.settings.custom_class }} formula-{{ section.id }}">
+  <div class="page-width">
+    <div class="formula-details">
+      <h2>{{ section.settings.headding }}</h2>
+      <div class="sub-headding">{{ section.settings.sub_headding }}</div>
+      <div class="formula-information">
+        {% for block in section.blocks %}
+          <div class="formula-info">
+            <div class="image-content">
+              <div class="formula-image">
+                {% if block.settings.formula_image != blank %}
+                  <img src="{{ block.settings.formula_image | image_url }}" width="auto" height="auto">
+                {% endif %}
+              </div>
+            </div>
+            <div class="text-content">
+              <div class="formula-title">
+                {% if block.settings.title_image != blank %}
+                  <img src="{{ block.settings.title_image | image_url }}" width="auto" height="auto">
+                {% endif %}
+                <h3>{{ block.settings.title }}</h3>
+              </div>
+              <div class="formula-text-info">
+                {{ block.settings.detail }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="custom-slider-controls">
+        <button id="prev-slide">
+          {% if section.settings.prev_arrow != blank %}
+            <img src="{{ section.settings.prev_arrow | image_url }}" width="auto" height="auto">
+          {% endif %}
+        </button>
+        <button id="next-slide">
+          {% if section.settings.next_arrow != blank %}
+            <img src="{{ section.settings.next_arrow | image_url }}" width="auto" height="auto">
+          {% endif %}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Initialize the slick slider with autoplay turned off
+    $('.formula-information').slick({
+      slidesToShow: 1,
+      arrows: false,
+      dots: false,
+      draggable: false,
+      swipe: false
+    });
+    $('#prev-slide').on('click', function() {
+      $('.formula-information').slick('slickPrev');
+    });
+
+    $('#next-slide').on('click', function() {
+      $('.formula-information').slick('slickNext');
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Formula section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headding",
+      "label": "Headding"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_headding",
+      "label": "Sub headding"
+    },
+    {
+      "type": "image_picker",
+      "id": "prev_arrow",
+      "label": "Prev arrow"
+    },
+    {
+      "type": "image_picker",
+      "id": "next_arrow",
+      "label": "Next_arrow"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class"
+    },
+    {
+      "type": "number",
+      "id": "container_size",
+      "label": "Page width",
+    },
+    {
+      "type": "range",
+      "id": "top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Section top padding"
+    },
+    {
+      "type": "range",
+      "id": "bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Section bottom padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Mobile top padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "label": "Mobile bottom padding"
+    }
+  ],
+  "blocks":[
+    {
+      "name":"formula",
+      "type":"image",
+      "settings":[
+        {
+          "type": "image_picker",
+          "id": "formula_image",
+          "label": "Formula image"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_image",
+          "label": "Title image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "detail",
+          "label": "Detail"
+        }
+      ]
+    }
+  ],
+  "presets":[
+  {
+    "name": "Formula section"
+  }
+]
+}
+{% endschema %}

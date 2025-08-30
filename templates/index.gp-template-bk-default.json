@@ -1,0 +1,1139 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "featured_in_rKFijB": {
+      "type": "featured-in",
+      "disabled": true,
+      "settings": {
+        "headding": "Mama Natural is the #1 Natural Parenting Brand online as seen on…",
+        "featured_image": "shopify://shop_images/Group_25495.png",
+        "custom_class": "",
+        "container_size": 1086,
+        "top_padding": 65,
+        "bottom_padding": 65,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "benefits_section_FXQhkQ": {
+      "type": "benefits-section",
+      "blocks": {
+        "text_nJhcad": {
+          "type": "text",
+          "settings": {
+            "benefit_title": "🌿 Incredibly Convenient",
+            "benefit_text": "<p>Take just one easy-to-swallow tablet a day for complete nourishment throughout your pregnancy.</p>"
+          }
+        },
+        "text_dfQwFy": {
+          "type": "text",
+          "settings": {
+            "benefit_title": "🌱 Ultra-Nourishing",
+            "benefit_text": "<p>Provides essential vitamins and minerals to support both you and your baby, from folate to Vitamin D3—all from real-food sources.</p>"
+          }
+        },
+        "text_LGwyp7": {
+          "type": "text",
+          "settings": {
+            "benefit_title": "💊 Gentle on the Stomach",
+            "benefit_text": "<p>No more nausea, constipation or digestive discomfort—designed to be easy on your tummy while delivering the nutrients you need.</p>"
+          }
+        },
+        "text_6ncBj6": {
+          "type": "text",
+          "settings": {
+            "benefit_title": "🥦 Packed with Superfoods",
+            "benefit_text": "<p>Each tablet contains 12 antioxidant-rich superfoods like Beet, Blueberry and Pomegranate, supporting your health every step of the way.</p>"
+          }
+        },
+        "text_jhndUE": {
+          "type": "text",
+          "settings": {
+            "benefit_title": "👶 Clean & Pure",
+            "benefit_text": "<p>Our multivitamin is USDA Organic, non-GMO, gluten-free, and synthetic-free—no artificial junk, just real food!</p>"
+          }
+        },
+        "image_nMAzHN": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/Group_4.png",
+            "icon_text": "<p>Made in the USA</p>"
+          }
+        },
+        "image_w4yaeT": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/Group_5.png",
+            "icon_text": "<p>vegan</p>"
+          }
+        },
+        "image_tHYwbn": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/Group_6.png",
+            "icon_text": "<p>Third party tested</p>"
+          }
+        },
+        "image_KeMVxi": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/Group_7.png",
+            "icon_text": "<p>Non-GMO</p>"
+          }
+        },
+        "image_QrXJFW": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/Group_8.png",
+            "icon_text": "<p>Gluten free</p>"
+          }
+        },
+        "image_4ifnXJ": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/Group_9.png",
+            "icon_text": "<p>Soy free</p>"
+          }
+        },
+        "image_MrmWa4": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/Group_10.png",
+            "icon_text": "<p>Dairy Free</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_nJhcad",
+        "text_dfQwFy",
+        "text_LGwyp7",
+        "text_6ncBj6",
+        "text_jhndUE",
+        "image_nMAzHN",
+        "image_w4yaeT",
+        "image_tHYwbn",
+        "image_KeMVxi",
+        "image_QrXJFW",
+        "image_4ifnXJ",
+        "image_MrmWa4"
+      ],
+      "settings": {
+        "headding": "Natural Prenatal Support in Just One Daily Tablet",
+        "sub_headding": "<p>“Organic ingredients, real nourishment, and gentle on your stomach.”</p>",
+        "video_url": "https://youtu.be/23Byf6BkkmQ?si=FAyDPiP0qu19LXJ7",
+        "description": "Video",
+        "benefits_inner_image": "shopify://shop_images/Leading.png",
+        "custom_class": "",
+        "page_width": 1230,
+        "top_padding": 90,
+        "bottom_padding": 90,
+        "tab_top_padding": 70,
+        "tab_bottom_padding": 70,
+        "mob_top_padding": 55,
+        "mob_bottom_padding": 55
+      }
+    },
+    "video_reviews_section_9jRCzW": {
+      "type": "video-reviews-section",
+      "blocks": {
+        "text_mGmTeB": {
+          "type": "text",
+          "settings": {
+            "review_video": "shopify://shop_images/Mask_group_28.png",
+            "review_image": "shopify://shop_images/Frame_25563.png",
+            "review_title": "Must have for pregnancy!",
+            "review_text": "<p>This is my third pregnancy. When I got pregnant this time I knew I needed an aid to help me stay regular and avoid any type of vaginal infection like I had my first two pregnancies. This has kept me so healthy in those areas. It’s a must have. I won’t go without this product and would recommend to anyone.</p>",
+            "review_author": "<p>Kelsey W.</p>",
+            "verified_buyer_image": "shopify://shop_images/Group_25494_2.png",
+            "verified_buyer_text": "<p>Verified Buyer</p>"
+          }
+        },
+        "text_Ym7wAG": {
+          "type": "text",
+          "settings": {
+            "review_video": "shopify://shop_images/Mask_group_28.png",
+            "review_image": "shopify://shop_images/Frame_25563.png",
+            "review_title": "Must have for pregnancy!",
+            "review_text": "<p>This is my third pregnancy. When I got pregnant this time I knew I needed an aid to help me stay regular and avoid any type of vaginal infection like I had my first two pregnancies. This has kept me so healthy in those areas. It’s a must have. I won’t go without this product and would recommend to anyone.</p>",
+            "review_author": "<p>Kelsey W.</p>",
+            "verified_buyer_image": "shopify://shop_images/Group_25494_2.png",
+            "verified_buyer_text": "<p>Verified Buyer</p>"
+          }
+        },
+        "text_rabTX8": {
+          "type": "text",
+          "settings": {
+            "review_video": "shopify://shop_images/Mask_group_28.png",
+            "review_image": "shopify://shop_images/Frame_25563.png",
+            "review_title": "Must have for pregnancy!",
+            "review_text": "<p>This is my third pregnancy. When I got pregnant this time I knew I needed an aid to help me stay regular and avoid any type of vaginal infection like I had my first two pregnancies. This has kept me so healthy in those areas. It’s a must have. I won’t go without this product and would recommend to anyone.</p>",
+            "review_author": "<p>Kelsey W.</p>",
+            "verified_buyer_image": "shopify://shop_images/Group_25494_2.png",
+            "verified_buyer_text": "<p>Verified Buyer</p>"
+          }
+        },
+        "text_HFj96h": {
+          "type": "text",
+          "settings": {
+            "review_video": "shopify://shop_images/Mask_group_28.png",
+            "review_image": "shopify://shop_images/Frame_25563.png",
+            "review_title": "Must have for pregnancy!",
+            "review_text": "<p>This is my third pregnancy. When I got pregnant this time I knew I needed an aid to help me stay regular and avoid any type of vaginal infection like I had my first two pregnancies. This has kept me so healthy in those areas. It’s a must have. I won’t go without this product and would recommend to anyone.</p>",
+            "review_author": "<p>Kelsey W.</p>",
+            "verified_buyer_image": "shopify://shop_images/Group_25494_2.png",
+            "verified_buyer_text": "<p>Verified Buyer</p>"
+          }
+        },
+        "text_Ak7gHa": {
+          "type": "text",
+          "settings": {
+            "review_video": "shopify://shop_images/Mask_group_28.png",
+            "review_image": "shopify://shop_images/Frame_25563.png",
+            "review_title": "Must have for pregnancy!",
+            "review_text": "<p>This is my third pregnancy. When I got pregnant this time I knew I needed an aid to help me stay regular and avoid any type of vaginal infection like I had my first two pregnancies. This has kept me so healthy in those areas. It’s a must have. I won’t go without this product and would recommend to anyone.</p>",
+            "review_author": "<p>Kelsey W.</p>",
+            "verified_buyer_image": "shopify://shop_images/Group_25494_2.png",
+            "verified_buyer_text": "<p>Verified Buyer</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_mGmTeB",
+        "text_Ym7wAG",
+        "text_rabTX8",
+        "text_HFj96h",
+        "text_Ak7gHa"
+      ],
+      "settings": {
+        "custom_class": "",
+        "container_size": 1228,
+        "top_padding": 80,
+        "bottom_padding": 80,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "features_slider_section_8AiP7t": {
+      "type": "features-slider-section",
+      "blocks": {
+        "text_CGNAqg": {
+          "type": "text",
+          "settings": {
+            "features": "Supports Baby’s Gut Health"
+          }
+        },
+        "text_An4JeF": {
+          "type": "text",
+          "settings": {
+            "features": "Vaginal Health & UTI Protection"
+          }
+        },
+        "text_GJYRB8": {
+          "type": "text",
+          "settings": {
+            "features": "Fast Digestive Relief"
+          }
+        },
+        "text_iQYxzy": {
+          "type": "text",
+          "settings": {
+            "features": "Supports Baby’s Gut Health"
+          }
+        },
+        "text_fqyXqx": {
+          "type": "text",
+          "settings": {
+            "features": "Supports Baby’s Gut Health"
+          }
+        },
+        "text_kCCLHP": {
+          "type": "text",
+          "settings": {
+            "features": "Supports Baby’s Gut Health"
+          }
+        }
+      },
+      "block_order": [
+        "text_CGNAqg",
+        "text_An4JeF",
+        "text_GJYRB8",
+        "text_iQYxzy",
+        "text_fqyXqx",
+        "text_kCCLHP"
+      ],
+      "settings": {
+        "custom_class": "",
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "image_with_text_section_LrDpW3": {
+      "type": "image-with-text-section",
+      "blocks": {
+        "text_g3UgQV": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_25582.png",
+            "icon_title": "2 million",
+            "icon-text": "monthly visitors"
+          }
+        },
+        "text_d9z93E": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_25583.png",
+            "icon_title": "120 million",
+            "icon-text": "YouTube views"
+          }
+        },
+        "text_6FxeBV": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_25584.png",
+            "icon_title": "250,000",
+            "icon-text": "Facebook fans"
+          }
+        },
+        "text_H7QUAk": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_25585.png",
+            "icon_title": "Bestselling",
+            "icon-text": "pregnancy book"
+          }
+        }
+      },
+      "block_order": [
+        "text_g3UgQV",
+        "text_d9z93E",
+        "text_6FxeBV",
+        "text_H7QUAk"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_info": "shopify://shop_images/image_44.png",
+        "headding": "Meet Genevieve, aka Mama Natural",
+        "text": "<p>Back in 2010, my husband and I started documenting our pregnancy journey on YouTube. What began as a fun hobby has grown into Mama Natural, the #1 natural pregnancy and parenting website.   </p><p>Today, we’re the proud authors of a bestselling childbirth book and offer a trusted birth course, all to help moms like you live healthier, more natural lives. Welcome to the community—I’m so glad you’re here!</p>",
+        "custom_class": "",
+        "container_size": 1240,
+        "top_padding": 95,
+        "bottom_padding": 95,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "features_section_mjDdhM": {
+      "type": "features-section",
+      "disabled": true,
+      "settings": {
+        "headding": "Real Moms, Real Results:",
+        "text": "<p>How Prenatal Probiotic HelpedMoms Prepare for Pregnancy</p>",
+        "custom_class": "",
+        "container_size": 928,
+        "top_padding": 50,
+        "bottom_padding": 50,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "formula_section_Ckia7C": {
+      "type": "formula-section",
+      "blocks": {
+        "image_WRJrtn": {
+          "type": "image",
+          "settings": {
+            "formula_image": "shopify://shop_images/Frame_25597.png",
+            "title_image": "shopify://shop_images/Frame_25596.png",
+            "title": "4 Strains for Gut Health",
+            "detail": "<ul><li><strong>L. plantarum (UALp-05TM)</strong><br/>Supports digestion, reduces bloating, balances gut flora.</li></ul><p></p><ul><li><strong>L. acidophilus (UALa-01TM)</strong><br/>Promotes healthy digestion and aids nutrient absorption.</li></ul><p></p><ul><li><strong>L. casei (UALc-03TM)</strong> <br/>Improves gut health and helps with regular bowel movements.</li></ul><p></p><ul><li><strong>L. reuteri (UALre-16TM)</strong> <br/>Soothes inflammation and relieves indigestion.</li></ul>"
+          }
+        },
+        "image_HnC89z": {
+          "type": "image",
+          "settings": {
+            "formula_image": "shopify://shop_images/Frame_25597.png",
+            "title_image": "shopify://shop_images/Frame_25596.png",
+            "title": "4 Strains for Gut Health",
+            "detail": "<ul><li><strong>L. plantarum (UALp-05TM)</strong><br/>Supports digestion, reduces bloating, balances gut flora.</li></ul><p></p><ul><li><strong>L. acidophilus (UALa-01TM)</strong><br/>Promotes healthy digestion and aids nutrient absorption.</li></ul><p></p><ul><li><strong>L. casei (UALc-03TM)</strong> <br/>Improves gut health and helps with regular bowel movements.</li></ul><p></p><ul><li><strong>L. reuteri (UALre-16TM)</strong> <br/>Soothes inflammation and relieves indigestion.</li></ul>"
+          }
+        },
+        "image_yRJrT4": {
+          "type": "image",
+          "settings": {
+            "formula_image": "shopify://shop_images/Frame_25597.png",
+            "title_image": "shopify://shop_images/Frame_25596.png",
+            "title": "4 Strains for Gut Health",
+            "detail": "<ul><li><strong>L. plantarum (UALp-05TM)</strong><br/>Supports digestion, reduces bloating, balances gut flora.</li></ul><p></p><ul><li><strong>L. acidophilus (UALa-01TM)</strong><br/>Promotes healthy digestion and aids nutrient absorption.</li></ul><p></p><ul><li><strong>L. casei (UALc-03TM)</strong> <br/>Improves gut health and helps with regular bowel movements.</li></ul><p></p><ul><li><strong>L. reuteri (UALre-16TM)</strong> <br/>Soothes inflammation and relieves indigestion.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "image_WRJrtn",
+        "image_HnC89z",
+        "image_yRJrT4"
+      ],
+      "disabled": true,
+      "settings": {
+        "headding": "DISCOVER THE M12 FORMULA",
+        "sub_headding": "<p>12 powerful strains for full pregnancy support.</p>",
+        "prev_arrow": "shopify://shop_images/Frame_25614_1.png",
+        "next_arrow": "shopify://shop_images/Frame_25613.png",
+        "custom_class": "",
+        "container_size": 1400,
+        "top_padding": 95,
+        "bottom_padding": 95,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 80
+      }
+    },
+    "image_text_slider_NGCGd8": {
+      "type": "image-text-slider",
+      "blocks": {
+        "text_8fXUFd": {
+          "type": "text",
+          "settings": {
+            "slider_image": "shopify://shop_images/image_101_2.png",
+            "border_color": "#29abe2",
+            "text": "<p>Backyard Adventures</p>"
+          }
+        },
+        "text_z9Qp7G": {
+          "type": "text",
+          "settings": {
+            "slider_image": "shopify://shop_images/image_103.png",
+            "border_color": "#ff3c8a",
+            "text": "<p>Family Game Nights</p>"
+          }
+        },
+        "text_LUncEK": {
+          "type": "text",
+          "settings": {
+            "slider_image": "shopify://shop_images/Mask_group_32.png",
+            "border_color": "#ffc909",
+            "text": "<p>Educational Playtime</p>"
+          }
+        },
+        "text_R9aRGx": {
+          "type": "text",
+          "settings": {
+            "slider_image": "shopify://shop_images/image_101_2.png",
+            "border_color": "#334fb4",
+            "text": "<p>Backyard Adventures</p>"
+          }
+        },
+        "text_bHmtk7": {
+          "type": "text",
+          "settings": {
+            "slider_image": "shopify://shop_images/image_103.png",
+            "border_color": "#c82ae7",
+            "text": "<p>Family Game Nights</p>"
+          }
+        },
+        "text_XdBRcV": {
+          "type": "text",
+          "settings": {
+            "slider_image": "shopify://shop_images/Mask_group_32.png",
+            "border_color": "#5fea30",
+            "text": "<p>Educational Playtime</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_8fXUFd",
+        "text_z9Qp7G",
+        "text_LUncEK",
+        "text_R9aRGx",
+        "text_bHmtk7",
+        "text_XdBRcV"
+      ],
+      "disabled": true,
+      "settings": {
+        "headding": "Little Learners Toys Are Perfect For:",
+        "custom_class": "",
+        "container_size": 1510,
+        "top_padding": 115,
+        "bottom_padding": 80,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "video_section_WddHWq": {
+      "type": "video-section",
+      "disabled": true,
+      "settings": {
+        "headding": "Shaping Tomorrow's Minds With Yesterday's Play",
+        "sub_headding": "<p>At Little Learners Toys we offer top-quality toys and games that inspire real-world learning and fun – not just scrolling and screen time.</p>",
+        "video": "shopify://files/videos/5 Top Skills to Learn in College (1).mp4",
+        "desktop_top_icon": "shopify://shop_images/Group_25712.png",
+        "desktop_bottom_icon": "shopify://shop_images/Group_25652.png",
+        "mobile_top_icon": "shopify://shop_images/Group_25711.png",
+        "mobile_bottom_icon": "shopify://shop_images/Group_25652_1.png",
+        "custom_class": "",
+        "background_image": "shopify://shop_images/Vector_975.png",
+        "mobile_background_image": "shopify://shop_images/Little_Learners___DFLP_Mobile-V2.png",
+        "container_size": 914,
+        "top_padding": 125,
+        "bottom_padding": 115,
+        "mobile_top_padding": 110,
+        "mobile_bottom_padding": 50
+      }
+    },
+    "smpl_services_section_XdrHjp": {
+      "type": "Smpl-services-section",
+      "blocks": {
+        "image_text_agwHeh": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/Group_25637.png",
+            "services_heading": "Super Easy To Use"
+          }
+        },
+        "image_text_ACPkKP": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/Group_25638.png",
+            "services_heading": "No Toxic Fiberglass"
+          }
+        },
+        "image_text_VA7xR3": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/Group_25641.png",
+            "services_heading": "Compact & Travel-Ready"
+          }
+        },
+        "image_text_WHyjpV": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/Group_25639.png",
+            "services_heading": "Clean Suppression"
+          }
+        },
+        "image_text_dKjgMA": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/Group_25640.png",
+            "services_heading": "Lifetime warranty"
+          }
+        }
+      },
+      "block_order": [
+        "image_text_agwHeh",
+        "image_text_ACPkKP",
+        "image_text_VA7xR3",
+        "image_text_WHyjpV",
+        "image_text_dKjgMA"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "desktop_padding_top": 69,
+        "desktop_padding_bottom": 67,
+        "tablet_padding_top": 50,
+        "tablet_padding_bottom": 0,
+        "mobile_padding_top": 64,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "positioning_section_i4iLFL": {
+      "type": "positioning-section",
+      "blocks": {
+        "image_8JkXVB": {
+          "type": "image",
+          "settings": {
+            "position_image": "shopify://shop_images/Group_15.png",
+            "position_number": "1",
+            "position_step": "<p>Grab and Unfold</p>",
+            "description": "<p>Quickly grab your Fire Blanket and unfold it completely.</p>"
+          }
+        },
+        "image_Xjtafj": {
+          "type": "image",
+          "settings": {
+            "position_image": "shopify://shop_images/Group_16.png",
+            "position_number": "2",
+            "position_step": "<p>Approach</p>",
+            "description": "<p>Hold the blanket in front of you. Carefully approach the fire area, using the blanket as a shield.</p>"
+          }
+        },
+        "image_ypAhGM": {
+          "type": "image",
+          "settings": {
+            "position_image": "shopify://shop_images/Group_17.png",
+            "position_number": "3",
+            "position_step": "<p>Instantly Extinguish</p>",
+            "description": "<p>Gently lay the blanket over the fire source, completely covering the flames. The silicon-coated material will smother the fire by cutting off its oxygen supply.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_8JkXVB",
+        "image_Xjtafj",
+        "image_ypAhGM"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_heading": "How It Works",
+        "button_url": "#",
+        "button_text": "BUY NOW",
+        "button_text_color": "#ffffff",
+        "button_bg_color": "#ff7900",
+        "button_hover_color": "#29abe2",
+        "bottom_text": "100% Risk Free",
+        "custom_class": "",
+        "container_size": 939,
+        "top_padding": 65,
+        "bottom_padding": 50,
+        "tab_top_padding": 50,
+        "tab_bottom_padding": 50,
+        "mob_top_padding": 50,
+        "mob_bottom_padding": 50
+      }
+    },
+    "protection_section_ML8hK4": {
+      "type": "protection-section",
+      "blocks": {
+        "image_UQPPXy": {
+          "type": "image",
+          "settings": {
+            "protection_image": "shopify://shop_images/shutterstock_375692293_1.png",
+            "protection_text": "<p>Kitchen Fire</p>"
+          }
+        },
+        "image_mrdDAb": {
+          "type": "image",
+          "settings": {
+            "protection_image": "shopify://shop_images/shutterstock_607599446_1.png",
+            "protection_text": "<p>Electrical Fire</p>"
+          }
+        },
+        "image_nxWtTy": {
+          "type": "image",
+          "settings": {
+            "protection_image": "shopify://shop_images/shutterstock_2381904839_1.png",
+            "protection_text": "<p>Car Fire</p>"
+          }
+        },
+        "image_a8gxNJ": {
+          "type": "image",
+          "settings": {
+            "protection_image": "shopify://shop_images/shutterstock_2062349081_1.png",
+            "protection_text": "<p>Camping Fire</p>"
+          }
+        },
+        "image_w9AKTV": {
+          "type": "image",
+          "settings": {
+            "protection_image": "shopify://shop_images/shutterstock_792862657_1.png",
+            "protection_text": "<p>Small Indoor Fire</p>"
+          }
+        },
+        "image_qJVUKf": {
+          "type": "image",
+          "settings": {
+            "protection_image": "shopify://shop_images/shutterstock_2235169597_1.png",
+            "protection_text": "<p>BBQ Fire</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_UQPPXy",
+        "image_mrdDAb",
+        "image_nxWtTy",
+        "image_a8gxNJ",
+        "image_w9AKTV",
+        "image_qJVUKf"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_heading": "Fire Protection Where You Need It Most",
+        "section_heading_color": "#121212",
+        "button_url": "shopify://collections",
+        "button_text": "BUY NOW",
+        "button_text_color": "#ffffff",
+        "button_bg_color": "#ff7900",
+        "button_hover_color": "#00a9ff",
+        "bottom_text": "100% Risk Free",
+        "custom_class": "",
+        "container_size": 1093,
+        "top_padding": 70,
+        "bottom_padding": 105,
+        "tab_top_padding": 50,
+        "tab_bottom_padding": 50,
+        "mob_top_padding": 50,
+        "mob_bottom_padding": 50
+      }
+    },
+    "smpl_image_text_section_CYYCiC": {
+      "type": "smpl-image-text-section",
+      "disabled": true,
+      "settings": {
+        "section_heading": "Fire Safety is Family Safety",
+        "content": "<p>A distracted second in the kitchen. An overheated appliance. Suddenly, your home and loved ones are at risk. <br/><br/>It happens to families like yours every day. The SMPL Safe Fire Blanket gives you the power to act quickly, and stop a disaster in its tracks. <br/><br/>Because your family's safety isn't just a statistic—it's everything.<br/></p>",
+        "button_url": "",
+        "button_text": "BUY NOW",
+        "button_text_color": "",
+        "button_bg_color": "",
+        "button_hover_color": "",
+        "bottom_text": "100% Risk Free",
+        "image": "shopify://shop_images/Mask_group_39.png",
+        "custom_class": "",
+        "container_size": 1578,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "tab_top_padding": 50,
+        "tab_bottom_padding": 50,
+        "mob_top_padding": 50,
+        "mob_bottom_padding": 0
+      }
+    },
+    "revolutionary_section_QyGmQ8": {
+      "type": "Revolutionary-section",
+      "blocks": {
+        "image_text_ixy3rL": {
+          "type": "image_text",
+          "settings": {
+            "revolutionary_heading": "Skin-Friendly",
+            "revolutionary_text": "<p>Unlike fiberglass, which can cause irritation and tiny, painful splinters, our silicon coating is gentle on skin.</p>",
+            "section_alignment": "row",
+            "image": "shopify://shop_images/Mask_group_40.png",
+            "mo_image": "shopify://shop_images/Frame_25724.png"
+          }
+        },
+        "image_text_e9jFFH": {
+          "type": "image_text",
+          "settings": {
+            "revolutionary_heading": "No Harmful Particles",
+            "revolutionary_text": "<p>Fiberglass can release microscopic particles into the air when used or damaged. Our blanket eliminates this risk, keeping your air clean.</p>",
+            "section_alignment": "row-reverse",
+            "image": "shopify://shop_images/Mask_group_41.png",
+            "mo_image": "shopify://shop_images/Mask_group_44.png"
+          }
+        },
+        "image_text_X7iL7x": {
+          "type": "image_text",
+          "settings": {
+            "revolutionary_heading": "Better Durability",
+            "revolutionary_text": "<p>Silicon coating resists wear and tear better than fiberglass, ensuring your blanket stays effective use after use.</p>",
+            "section_alignment": "row",
+            "image": "shopify://shop_images/Group_25636_1.png",
+            "mo_image": "shopify://shop_images/Frame_25724_1.png"
+          }
+        },
+        "image_text_7bpcW9": {
+          "type": "image_text",
+          "settings": {
+            "revolutionary_heading": "No Messy Cleanup",
+            "revolutionary_text": "<p>Post-fire, there's no itchy residue or dangerous particles to contend with. Simply clean and reuse.</p>",
+            "section_alignment": "row-reverse",
+            "image": "shopify://shop_images/Mask_group_42.png",
+            "mo_image": "shopify://shop_images/Frame_25724_2.png"
+          }
+        },
+        "image_text_CnzHVF": {
+          "type": "image_text",
+          "settings": {
+            "revolutionary_heading": "Environmentally Friendly",
+            "revolutionary_text": "<p>Silicon is more eco-friendly than fiberglass, so you can feel better about using it.</p>",
+            "section_alignment": "row",
+            "image": "shopify://shop_images/Mask_group_43.png",
+            "mo_image": "shopify://shop_images/Mask_group_45.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_text_ixy3rL",
+        "image_text_e9jFFH",
+        "image_text_X7iL7x",
+        "image_text_7bpcW9",
+        "image_text_CnzHVF"
+      ],
+      "settings": {
+        "custom_class": "",
+        "section_heading": "The SMPL Safe Difference  ZERO Fiberglass",
+        "section_sub_heading": "While many fire blankets rely on fiberglass, the SMPL Safe Fire Blanket stands apart with its innovative silicon-coated design. Here's why that matters…",
+        "icon_image": "shopify://shop_images/Group_25635.png",
+        "bottom_text": "<p>SMPL Safe Fire Blanket is a safer, more user-friendly solution that puts your health first, during and after a fire emergency.</p>",
+        "button_url": "",
+        "button_text": "BUY NOW",
+        "risk_text": "100% Risk Free",
+        "container_size": 888,
+        "desktop_padding_top": 107,
+        "desktop_padding_bottom": 56,
+        "tablet_padding_top": 50,
+        "tablet_padding_bottom": 50,
+        "mobile_padding_top": 48,
+        "mobile_padding_bottom": 48
+      }
+    },
+    "comparison_section_aqyqaf": {
+      "type": "comparison-section",
+      "blocks": {
+        "text_8WNXpy": {
+          "type": "text",
+          "settings": {
+            "left_content": "<p>Easy to use</p>",
+            "middle_content": "shopify://shop_images/Group_25515.svg",
+            "right_content": "shopify://shop_images/Group_25571.svg"
+          }
+        },
+        "text_trWdt6": {
+          "type": "text",
+          "settings": {
+            "left_content": "<p>No mess to clean up</p>",
+            "middle_content": "shopify://shop_images/Group_25515.svg",
+            "right_content": "shopify://shop_images/Group_25571.svg"
+          }
+        },
+        "text_kUrqwi": {
+          "type": "text",
+          "settings": {
+            "left_content": "<p>Reusable</p>",
+            "middle_content": "shopify://shop_images/Group_25515.svg",
+            "right_content": "shopify://shop_images/Group_25571.svg"
+          }
+        },
+        "text_Yg8P7V": {
+          "type": "text",
+          "settings": {
+            "left_content": "<p>Safe for all fire types</p>",
+            "middle_content": "shopify://shop_images/Group_25515.svg",
+            "right_content": "shopify://shop_images/Group_25571.svg"
+          }
+        },
+        "text_epER3Q": {
+          "type": "text",
+          "settings": {
+            "left_content": "<p>Child-friendly use</p>",
+            "middle_content": "shopify://shop_images/Group_25515.svg",
+            "right_content": "shopify://shop_images/Group_25571.svg"
+          }
+        },
+        "text_rwYMQU": {
+          "type": "text",
+          "settings": {
+            "left_content": "<p>Compact storage</p>",
+            "middle_content": "shopify://shop_images/Group_25515.svg",
+            "right_content": "shopify://shop_images/Group_25571.svg"
+          }
+        },
+        "text_HfBMqk": {
+          "type": "text",
+          "settings": {
+            "left_content": "<p>Non-toxic materials</p>",
+            "middle_content": "shopify://shop_images/Group_25515.svg",
+            "right_content": "shopify://shop_images/Group_25571.svg"
+          }
+        }
+      },
+      "block_order": [
+        "text_8WNXpy",
+        "text_trWdt6",
+        "text_kUrqwi",
+        "text_Yg8P7V",
+        "text_epER3Q",
+        "text_rwYMQU",
+        "text_HfBMqk"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_heading": "A Better, Safer, Easier Fire Extinguisher",
+        "left_content_title": "<p>Feature</p>",
+        "middle_content_title": "<p>SMPL Safe Fire Blanket</p>",
+        "right_content_title": "<p>Fire Extinguisher</p>",
+        "button_url": "#",
+        "button_text": "BUY NOW",
+        "bottom_text": "100% Risk Free",
+        "custom_class": "",
+        "container_size": 1051,
+        "top_padding": 120,
+        "bottom_padding": 120,
+        "tab_top_padding": 50,
+        "tab_bottom_padding": 50,
+        "mob_top_padding": 50,
+        "mob_bottom_padding": 50
+      }
+    },
+    "worries_guarantee_section_JkmLHe": {
+      "type": "worries-guarantee-section",
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "image": "shopify://shop_images/Frame_25735_3.png",
+        "mo_image": "shopify://shop_images/Frame_25735_2.png",
+        "heading": "Our No-Worries Guarantee",
+        "text": "<p>With SMPL Safe, you’re protected for life. <br/><br/>If you're not satisfied for any reason, send it back within 30 days for a full refund. <br/><br/>Simple, fair, and all about keeping you and your loved ones safe.<br/></p>",
+        "button_url": "",
+        "button_text": "BUY NOW",
+        "bottom_text": "100% Risk Free",
+        "container_size": 1274,
+        "desktop_padding_top": 107,
+        "desktop_padding_bottom": 56,
+        "tablet_padding_top": 50,
+        "tablet_padding_bottom": 50,
+        "mobile_padding_top": 48,
+        "mobile_padding_bottom": 48
+      }
+    },
+    "faq_section_PxRd7w": {
+      "type": "faq-section",
+      "blocks": {
+        "text_EXe9gr": {
+          "type": "text",
+          "settings": {
+            "question": "How does the SMPL Safe Fire Blanket work?",
+            "answer": "It smothers fires by cutting off oxygen supply. Simply unfold and lay it over the fire to extinguish flames quickly."
+          }
+        },
+        "text_LffahF": {
+          "type": "text",
+          "settings": {
+            "question": "Is it safe for kitchen fires?",
+            "answer": "Yes, it's ideal for common kitchen fires, including grease fires. It's safe to use on stovetops and in ovens."
+          }
+        },
+        "text_ctp963": {
+          "type": "text",
+          "settings": {
+            "question": "Can children use it?",
+            "answer": "Absolutely. Its lightweight design and simple operation make it easy for children to use in emergencies."
+          }
+        },
+        "text_rUURim": {
+          "type": "text",
+          "settings": {
+            "question": "How many times can it be used?",
+            "answer": "The SMPL Safe Fire Blanket is reusable. After use, clean it according to instructions and it's ready for future emergencies."
+          }
+        },
+        "text_9r4EXN": {
+          "type": "text",
+          "settings": {
+            "question": "Does it expire?",
+            "answer": "No, unlike traditional fire extinguishers, it doesn't expire."
+          }
+        },
+        "text_6c8T4F": {
+          "type": "text",
+          "settings": {
+            "question": "Is it safe for electrical fires?",
+            "answer": "Yes, the silicon-coated material is non-conductive, making it safe to use on electrical fires in homes and vehicles."
+          }
+        }
+      },
+      "block_order": [
+        "text_EXe9gr",
+        "text_LffahF",
+        "text_ctp963",
+        "text_rUURim",
+        "text_9r4EXN",
+        "text_6c8T4F"
+      ],
+      "settings": {
+        "section_heading": "FAQs",
+        "custom_class": "",
+        "background_color": "#f4f6f7",
+        "container_size": 1043,
+        "top_padding": 65,
+        "bottom_padding": 105,
+        "tab_top_padding": 50,
+        "tab_bottom_padding": 50,
+        "mob_top_padding": 50,
+        "mob_bottom_padding": 50
+      }
+    },
+    "smpl_banner_TqzfNz": {
+      "type": "Smpl-banner",
+      "disabled": true,
+      "settings": {
+        "section_heading": "<b>When Seconds Count</b>  Keep It SMPL",
+        "description": "<p>Simple, smart, home safety essentials the whole family can use to stay prepared for life's unexpected moments.</p>",
+        "star_image": "shopify://shop_images/Group_25549.png",
+        "button_url": "#",
+        "button_text": "Shop Life-Saving Essentials",
+        "button_text_color": "#ffffff",
+        "button_bg_color": "#63d5f3",
+        "button_hover_color": "#ff7900",
+        "custom_class": "",
+        "background_image": "shopify://shop_images/Frame_25638.png",
+        "container_size": 1056,
+        "top_padding": 185,
+        "bottom_padding": 185,
+        "tab_top_padding": 155,
+        "tab_bottom_padding": 155,
+        "mob_top_padding": 155,
+        "mob_bottom_padding": 155
+      }
+    },
+    "ready_where_section_Wj9jKz": {
+      "type": "ready-where-section",
+      "blocks": {
+        "image_text_FNMGdk": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/Group_25648.png",
+            "services_heading": "At Home"
+          }
+        },
+        "image_text_px9UnL": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/Group_25648_1.png",
+            "services_heading": "In The Car"
+          }
+        },
+        "image_text_JGfwLG": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/Group_25648_2.png",
+            "services_heading": "Camping"
+          }
+        },
+        "image_text_rPxPN8": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/shutterstock_2496333119.png",
+            "services_heading": "Travel"
+          }
+        },
+        "image_text_Ln3pi9": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/Group_25648_3.png",
+            "services_heading": "Work"
+          }
+        },
+        "image_text_gEJChR": {
+          "type": "image_text",
+          "settings": {
+            "image_services": "shopify://shop_images/Group_25648_4.png",
+            "services_heading": "RVs"
+          }
+        }
+      },
+      "block_order": [
+        "image_text_FNMGdk",
+        "image_text_px9UnL",
+        "image_text_JGfwLG",
+        "image_text_rPxPN8",
+        "image_text_Ln3pi9",
+        "image_text_gEJChR"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_heading": "Ready Where You Are",
+        "custom_class": "",
+        "container_size": 1270,
+        "border_check": false,
+        "desktop_padding_top": 95,
+        "desktop_padding_bottom": 95,
+        "tablet_padding_top": 50,
+        "tablet_padding_bottom": 0,
+        "mobile_padding_top": 64,
+        "mobile_padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "featured_collection",
+    "featured_in_rKFijB",
+    "benefits_section_FXQhkQ",
+    "video_reviews_section_9jRCzW",
+    "features_slider_section_8AiP7t",
+    "image_with_text_section_LrDpW3",
+    "features_section_mjDdhM",
+    "formula_section_Ckia7C",
+    "image_text_slider_NGCGd8",
+    "video_section_WddHWq",
+    "smpl_services_section_XdrHjp",
+    "positioning_section_i4iLFL",
+    "protection_section_ML8hK4",
+    "smpl_image_text_section_CYYCiC",
+    "revolutionary_section_QyGmQ8",
+    "comparison_section_aqyqaf",
+    "worries_guarantee_section_JkmLHe",
+    "faq_section_PxRd7w",
+    "smpl_banner_TqzfNz",
+    "ready_where_section_Wj9jKz"
+  ]
+}

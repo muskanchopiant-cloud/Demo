@@ -1,0 +1,130 @@
+<style>
+  .text-information-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background: #F05A5D;
+  }
+  .text-information-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .text-information-section .text-information-details h2 {
+    font-family: Aleo;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0;
+    color: #fff;
+  }
+  .text-information-section .text-information p {
+    font-family: Aleo;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 56px;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 0;
+  }
+  @media screen and (max-width: 767px){
+     .text-information-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_top_padding }}px;
+      padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+    }
+    .text-information-section  .text-information-details h2{
+      font-size: 29px;
+      line-height: 30px;
+      padding-bottom: 20px;
+    }
+    .text-information-section .text-information p{
+      font-size: 22px;
+      line-height: 30px;
+    }
+   }
+</style>
+<section class="text-information-section {{ section.settings.custom_class }} text-information-{{ section.id }}">
+  <div class="page-width">
+    <div class="text-information-details">
+      <h2>{{ section.settings.headding }}</h2>
+      <div class="text-information">
+         {{ section.settings.text }}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headding",
+        "label": "Headding"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+    ],
+    "presets":[
+    {
+      "name": "text section"
+    }
+  ]
+  }
+{% endschema %}

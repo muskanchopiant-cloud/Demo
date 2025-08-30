@@ -1,0 +1,393 @@
+{% style %}
+  #{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    {% if section.settings.background_color != blank %}
+      background-color:{{ section.settings.background_color }};
+    {% endif %}
+    {% if section.settings.bg_image != blank %}
+      background-image: url({{ section.settings.bg_image | image_url }});
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    {% endif %}
+  }
+  #{{ section.id }} .page-width {
+    max-width: {{ section.settings.page_width }}px;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  @font-face {
+    font-family: 'LunchBox';
+    src: url('https://cdn.shopify.com/s/files/1/0530/4591/9916/files/LunchBox.eot?v=1756273712');
+    src: url('https://cdn.shopify.com/s/files/1/0530/4591/9916/files/LunchBox.eot?v=1756273712?#iefix') format('embedded-opentype'),
+        url('https://cdn.shopify.com/s/files/1/0530/4591/9916/files/LunchBox.woff2?v=1756273711') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0530/4591/9916/files/LunchBox.woff?v=1756273712') format('woff'),
+        url('https://cdn.shopify.com/s/files/1/0530/4591/9916/files/LunchBox.ttf?v=1756273712') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  .supplement-clean-section .section-heading {
+    font-family: LunchBox;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    color: #BE5D58;
+    padding-bottom: 20px;
+  }
+  .supplement-clean-section .section-description p {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #1E1E1E;
+    max-width: 1045px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .supplement-clean-section .supplement-clean-information{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1228px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 45px;
+  }
+  .supplement-clean-section .supplement-clean-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
+    background: url(https://cdn.shopify.com/s/files/1/0585/7610/9670/files/Clipping_-_Rectangle_531.png?v=1756277387);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 16px 43px 23px 0;
+  }
+  .supplement-clean-section .supplement-clean-info:nth-child(1) {
+    padding: 14px 42px 23px 0;
+    margin: 0 -14px 0 0;
+  }
+ .supplement-clean-section  .supplement-clean-info:nth-child(2) {
+    margin: 0 0px 0 -10px;
+    gap: 23px;
+  }
+  .supplement-clean-section .supplement-clean-info:nth-child(1) .block-sub-heading {
+    max-width: 280px;
+    width: 100%;
+  }
+  .supplement-clean-section .supplement-clean-info:nth-child(1) .supplement-image img {
+    max-width: 175px;
+    margin: 24px 0 0 -14px;
+  }
+  .supplement-clean-section .supplement-clean-info:nth-child(2) .supplement-image img {
+    margin: -5px 0 0 -53px;
+    max-width: 196px;
+  }
+  .supplement-clean-section .block-sub-heading {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    padding-bottom: 9px;
+  }
+  .supplement-clean-section .block-description p {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+  }
+  @media screen and (max-width: 1024px) {
+    #{{ section.id }} {
+      padding-top: {{ section.settings.tablet_padding_top }}px;
+      padding-bottom: {{ section.settings.tablet_padding_bottom }}px;
+    }
+    .supplement-clean-section .section-heading{
+        font-size: 50px;
+    }
+    .supplement-clean-section .section-description p{
+        font-size: 20px;
+    }
+    .supplement-clean-section .supplement-clean-info{
+        gap: 10px;
+    }
+    .supplement-clean-section .supplement-clean-info:nth-child(1){
+        margin: 0 -15px 0 0px;
+        padding: 14px 15px 23px 0;
+    }
+    .supplement-clean-section .supplement-clean-info:nth-child(2) {
+        margin: 0 0px 0 -15px;
+        gap: 10px;
+    }
+    .supplement-clean-section .supplement-clean-info:nth-child(1) .supplement-image img{
+        max-width: 98px;
+    }
+    .supplement-clean-section .supplement-clean-info:nth-child(2) .supplement-image img {
+        margin: -5px 0 0 -25px;
+        max-width: 108px;
+    }
+    .supplement-clean-section .supplement-clean-information{
+        padding-top: 20px;
+    }
+    .supplement-clean-section .block-sub-heading{
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .supplement-clean-section .block-description p{
+        font-size: 17px;
+        line-height: 20px;
+    }
+    .supplement-clean-section .supplement-clean-info{
+        padding: 16px 15px 23px 0;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    #{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      {% if section.settings.mobile_bg_image != blank %}
+        background-image: url({{ section.settings.mobile_bg_image | image_url }});
+      {% endif %}
+    }
+    .supplement-clean-section .section-heading {
+        font-size: 40px;
+        line-height: 46px;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .supplement-clean-section .section-description p {
+        font-size: 16px;
+        line-height: 25px;
+        max-width: 289px;
+        width: 100%;
+    }
+    .supplement-clean-section .supplement-clean-information{
+        flex-direction: column;
+        gap: 22px;
+    }
+    .supplement-clean-section .block-sub-heading {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .supplement-clean-section .block-description p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .supplement-clean-section .supplement-clean-info {
+        gap: 15px;
+        max-width: 321px;
+        width: 100%;
+        margin: 0 auto !important;
+    }
+    .supplement-clean-section .supplement-clean-info:nth-child(2) {
+        margin: 0;
+        gap: 15px;
+    }
+    .supplement-clean-section .supplement-clean-info:nth-child(2) .supplement-image img{
+        margin: -5px 0 0 -34px;
+    }
+    .supplement-clean-section .supplement-clean-info:nth-child(1) .block-sub-heading {
+        max-width: 157px;
+        width: 100%;
+    }
+  }
+{% endstyle %}
+<section id="{{ section.id }}" class="supplement-clean-section {{ section.settings.custome_class }}">
+  <div class="page-width">
+   <div class="supplement-clean-details">
+    {% if section.settings.heading != blank %}
+        <h2 class="section-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.description != blank %}
+       <div class="section-description">
+            {{ section.settings.description }}
+       </div>
+    {% endif %}
+    <div class="supplement-clean-information">
+        {% for block in section.blocks %}
+            <div class="supplement-clean-info">
+                <div class="supplement-image">
+                    {% if block.settings.image != blank %}
+                        <img
+                            src="{{ block.settings.image | image_url }}"
+                            height="auto"
+                            width="auto"
+                            alt="{{ block.settings.image }}"
+                        >
+                    {% endif %}
+                </div>
+                <div class="supplement-text">
+                    {% if block.settings.sub_heading != blank %}
+                        <h3 class="block-sub-heading">{{ block.settings.sub_heading }}</h3>
+                    {% endif %}
+                    {% if block.settings.supplement_info != blank %}
+                        <div class="block-description">
+                            {{ block.settings.supplement_info }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+   </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Supplement Clean Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "header",
+        "content": "General Settings"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom Class"
+      },
+      {
+        "type": "number",
+        "id": "page_width",
+        "label": "Page Width",
+        "info": "Add PX Number"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Desktop Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_bg_image",
+        "label": "Mobile Background Image"
+      },
+      {
+        "type" : "header",
+        "content" : "Desktop Section Padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 36
+      },
+      {
+        "type" : "header",
+        "content" : "Tablet Section Padding"
+      },
+      {
+        "type": "range",
+        "id": "tablet_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "tablet_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 36
+      },
+      {
+        "type" : "header",
+        "content" : "Mobile Section Padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Top Padding",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Bottom Padding",
+        "default": 36 
+      }
+    ],
+    "blocks": [
+      {
+        "type": "features",
+        "name": "Features",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "sub_heading",
+                "label": "Sub heading"
+            },
+            {
+                "type": "richtext",
+                "id": "supplement_info",
+                "label": "Supplement info"
+            }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Supplement Clean Section"
+      }
+    ]
+  }
+{% endschema %}

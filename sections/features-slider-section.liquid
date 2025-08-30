@@ -1,0 +1,155 @@
+<style>
+  .features-slider-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+    background: #FE757D;
+  }
+  .features-slider-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .features-slider-section .features-slider-info {
+      font-family: Aleo;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+      text-align: left;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 0;
+      padding-top: 30px;
+      padding-bottom: 23px;
+      text-transform: uppercase;
+    }
+   @media screen and (max-width: 767px){
+     .features-slider-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_top_padding }}px;
+      padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+    }
+   }
+</style>
+<section class="features-slider-section {{ section.settings.custom_class }} features-slider-{{ section.id }}">
+    <div class="features-slider-details">
+      <div class="features-slider-information">
+        {% for block in section.blocks %}
+          <div class="features-slider-info">
+            {{ block.settings.features }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+</section>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $('.features-slider-information').slick({
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 3000,
+    arrows: false,
+    swipe: false,
+    slidesToShow: 4,
+    cssEase: 'linear',
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        infinite: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ]
+});
+</script>
+{% schema %}
+  {
+    "name": "Features",
+    "settings": [
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+    ],
+    "blocks":[
+      {
+        "name":"Benefit",
+        "type":"text",
+        "settings":[
+          {
+            "type": "text",
+            "id": "features",
+            "label": "Features"
+          }
+        ]
+      }
+    ],
+    "presets":[
+    {
+      "name": "Features slider section"
+    }
+  ]
+  }
+{% endschema %}

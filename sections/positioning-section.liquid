@@ -1,0 +1,353 @@
+<style>
+  .positioning-{{ section.id }}{
+    padding-top: {{ section.settings.top_padding }}px;
+    padding-bottom: {{ section.settings.bottom_padding }}px;
+  }
+  .positioning-{{ section.id }} .page-width {
+    max-width: {{ section.settings.container_size }}px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  .positioning-section .section-heading {
+    margin: 0 auto 60px;
+    padding-left: 9px;
+    letter-spacing: 0.4px;
+  }
+  .position-information {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
+    gap: 56px;
+    align-items: baseline;
+    padding-bottom: 69px;
+  }
+  .position-image {
+    display: block;
+    text-align: center;
+    padding: 0 15px 38px;
+  }
+  .position-info:nth-child(1) .position-image {
+    padding: 0 25px 40px;
+  }
+  .position-info:nth-child(2) .position-image {
+    padding: 0 51px 42px;
+  }
+  .position-image img {
+    max-width: 100%;
+  }
+  .position-step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+  .position-step h3 {
+    font-family: Inter;
+    font-size: 17.75px;
+    font-weight: 900;
+    line-height: 25.2px;
+    letter-spacing: -0.019em;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    background: #00A9FF;
+    border-radius: 100%;
+    padding: 5px 12px;
+  }
+  .position-step p {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28.4px;
+    letter-spacing: -0.2px;
+    text-align: left;
+    color: #282828;
+    margin: 0;
+  }
+  .position-description p {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26.56px;
+    letter-spacing: -0.2px;
+    text-align: center;
+    margin: 0;
+  }
+  .revolutionary-icon-image:before {
+    content: '';
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    background: #00A9FF26;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    animation: opacity_first 1.5s infinite ease-in-out;
+    animation-delay:0.9s;
+  }
+  .revolutionary-icon-image:after {
+    content: '';
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    background: #00A9FF26;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: opacity 1.5s infinite ease-in-out;
+  }
+  .revolutionary-icon-image {
+    position: relative;
+    z-index: 1;
+  }
+  @keyframes opacity_first{
+    0% {
+      width: 0;
+      height:0;
+    }
+    50% {
+      width: 55px;
+      height:55px;
+    }
+    75%{
+      width: 65px;
+      height:65px;
+    }
+    100%{
+      width: 88px;
+      height:88px;
+    }
+  }
+  @keyframes opacity{
+    0% {
+      width: 0;
+      height:0;
+    }
+    50%{
+      width: 55px;
+      height:55px;
+    }
+    75%{
+      width: 65px;
+      height:65px;
+    }
+    100%{
+      width: 88px;
+      height:88px;
+    }
+  }
+  .positioning-section .bottom-text {
+    padding-left: 8px;
+  }
+  @media screen and (max-width: 1024px){
+    .protection-{{ section.id }} {
+        padding-top: {{ section.settings.tab_top_padding }}px;
+        padding-bottom: {{ section.settings.tab_bottom_padding }}px;
+     }
+  }
+  @media screen and (max-width: 767px){
+     .protection-{{ section.id }} {
+        padding-top: {{ section.settings.mob_top_padding }}px;
+        padding-bottom: {{ section.settings.mob_bottom_padding }}px;
+     }
+  }
+</style>
+<section class="positioning-section {{ section.settings.custom_class }} positioning-{{ section.id }}">
+  <div class="page-width">
+    <div class="positioning-detail">
+      <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
+      <div class="position-information">
+        {% for block in section.blocks %}
+          <div class="position-info">
+            <div class="position-image">
+              {% if block.settings.position_image != blank %}
+                <img src="{{ block.settings.position_image | image_url }}" alt="" width="auto" height="auto" >
+              {% endif %}
+            </div>
+            <div class="position-step">
+              <h3 class="revolutionary-icon-image">{{ block.settings.position_number }}</h3>
+              {{ block.settings.position_step }}
+            </div>
+            <div class="position-description">
+              {{ block.settings.description }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="buy-button">
+        {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_url }}">
+          {{ section.settings.button_text }}
+        </a>
+        {% endif %}
+      </div>
+      <div class="bottom-text">{{ section.settings.bottom_text }}</div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Positioning section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button url"
+      },
+      {
+        "type": "text",
+        "id":"button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "header",
+        "content": "Button settings"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button text color"
+      },
+      {
+        "type": "color",
+        "id": "button_bg_color",
+        "label": "Button background color"
+      },
+      {
+        "type": "color",
+        "id": "button_hover_color",
+        "label": "Hover color"
+      },
+      {
+        "type": "text",
+        "id": "bottom_text",
+        "label": "Bottom text"
+      },
+      {
+        "type": "text",
+        "id": "custom_class",
+        "label": "Custom class"
+      },
+      {
+        "type": "number",
+        "id": "container_size",
+        "label": "Page width",
+      },
+      {
+        "type": "header",
+        "content": "Desktop padding"
+      },
+      {
+        "type": "range",
+        "id": "top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section top padding"
+      },
+      {
+        "type": "range",
+        "id": "bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Section bottom padding"
+      },
+      {
+        "type": "header",
+        "content": "Tablet padding"
+      },
+      {
+        "type": "range",
+        "id": "tab_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Tablet top padding"
+      },
+      {
+        "type": "range",
+        "id": "tab_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Tablet bottom padding"
+      },
+      {
+        "type": "header",
+        "content": "Mobile padding"
+      },
+      {
+        "type": "range",
+        "id": "mob_top_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile top padding"
+      },
+      {
+        "type": "range",
+        "id": "mob_bottom_padding",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 0,
+        "label": "Mobile bottom padding"
+      }
+    ],
+    "blocks":[
+        {
+          "name":"Information",
+          "type":"image",
+          "settings":[
+            {
+              "type": "image_picker",
+              "id": "position_image",
+              "label": "Position image"
+            },
+            {
+              "type": "text",
+              "id": "position_number",
+              "label": "Position number"
+            },
+            {
+              "type": "richtext",
+              "id": "position_step",
+              "label": "Position step"
+            },
+            {
+              "type": "richtext",
+              "id": "description",
+              "label": "Description"
+            }
+          ]
+        }
+      ],
+    "presets":[
+      {
+        "name": "Positioning section"
+      }
+    ]
+  }
+{% endschema %}
